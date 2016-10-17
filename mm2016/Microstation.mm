@@ -1,0 +1,30 @@
+<map version="0.9.0">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1336958945004" ID="ID_1187003822" LINK="MingLife.mm" MODIFIED="1340349718683" TEXT="Microstation">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Y:\Product\Bentley\MicroStation\
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1336958966743" ID="ID_1599334776" MODIFIED="1336958983179" POSITION="right" TEXT="workspace">
+<node CREATED="1336958985676" ID="ID_1766580388" MODIFIED="1336958992945" TEXT="Tital bar"/>
+<node CREATED="1336958993646" ID="ID_1534346266" MODIFIED="1336958996042" TEXT="menu bar"/>
+<node CREATED="1336958996744" ID="ID_386656638" MODIFIED="1336959001723" TEXT="Standard tool bar"/>
+<node CREATED="1336959002705" ID="ID_436867591" MODIFIED="1336959011314" TEXT="Primary tool bar"/>
+<node CREATED="1336959012095" ID="ID_650216300" MODIFIED="1336959012095" TEXT=""/>
+</node>
+<node CREATED="1336959080116" ID="ID_1017025552" MODIFIED="1336959088812" POSITION="right" TEXT="window">
+<node CREATED="1336959089676" ID="ID_880053864" MODIFIED="1336959092713" TEXT="update view"/>
+<node CREATED="1336959093324" ID="ID_1234443184" MODIFIED="1336959098457" TEXT="zoom in /out"/>
+<node CREATED="1336959098828" ID="ID_848872778" MODIFIED="1336959104564" TEXT="window area"/>
+<node CREATED="1336959105522" ID="ID_697042927" MODIFIED="1336959107883" TEXT="fit view"/>
+<node CREATED="1336959109170" ID="ID_1217209512" MODIFIED="1336959119842" TEXT="pan view"/>
+</node>
+</node>
+</map>

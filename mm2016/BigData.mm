@@ -1,0 +1,11 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1443606393844" ID="ID_1285430556" LINK="MingLife.mm" MODIFIED="1443606410577" TEXT="BigData">
+<node CREATED="1443667318546" ID="ID_1031159274" MODIFIED="1443667325385" POSITION="right" TEXT="Domain">
+<node CREATED="1443667450198" ID="ID_1686238515" LINK="Healthcare.mm" MODIFIED="1443667450201" TEXT="Healthcare"/>
+<node CREATED="1443667366892" ID="ID_617299073" MODIFIED="1443667388549" TEXT="financial"/>
+<node CREATED="1443667423607" ID="ID_1939065856" MODIFIED="1443667425624" TEXT="HR"/>
+</node>
+<node CREATED="1443667326630" ID="ID_870215231" MODIFIED="1443667332455" POSITION="left" TEXT="Technical"/>
+</node>
+</map>

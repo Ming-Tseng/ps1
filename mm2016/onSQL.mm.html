@@ -1,0 +1,2439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>SQL</title>
+<style type="text/css">
+    li { list-style: none;  margin: 0; }
+    p { margin: 0; }
+    span.foldopened { color: white; font-size: xx-small;
+    border-width: 1; font-family: monospace; padding: 0em 0.25em 0em 0.25em; background: #e0e0e0;
+    VISIBILITY: visible;
+    cursor:pointer; }
+
+
+    span.foldclosed { color: #666666; font-size: xx-small;
+    border-width: 1; font-family: monospace; padding: 0em 0.25em 0em 0.25em; background: #e0e0e0;
+    VISIBILITY: hidden;
+    cursor:pointer; }
+
+    span.foldspecial { color: #666666; font-size: xx-small; border-style: none solid solid none;
+    border-color: #CCCCCC; border-width: 1; font-family: sans-serif; padding: 0em 0.1em 0em 0.1em; background: #e0e0e0;
+    cursor:pointer; }
+
+    span.l { color: red; font-weight: bold; }
+
+    a.mapnode:link {text-decoration: none; color: black; }
+    a.mapnode:visited {text-decoration: none; color: black; }
+    a.mapnode:active {text-decoration: none; color: black; }
+    a.mapnode:hover {text-decoration: none; color: black; background: #eeeee0; }
+
+</style>
+<!-- ^ Position is not set to relative / absolute here because of Mozilla -->
+</head>
+<body>
+
+<script type="text/javascript">
+   // Here we implement folding. It works fine with MSIE5.5, MSIE6.0 and
+   // Mozilla 0.9.6.
+
+   if (document.layers) {
+      //Netscape 4 specific code
+      pre = 'document.';
+      post = ''; }
+   if (document.getElementById) {
+      //Netscape 6 specific code
+      pre = 'document.getElementById("';
+      post = '").style'; }
+   if (document.all) {
+      //IE4+ specific code
+      pre = 'document.all.';
+      post = '.style'; }
+
+function layer_exists(layer) {
+   try {
+      eval(pre + layer + post);
+      return true; }
+   catch (error) {
+      return false; }}
+
+function show_layer(layer) {
+   eval(pre + layer + post).position = 'relative'; 
+   eval(pre + layer + post).visibility = 'visible'; }
+
+function hide_layer(layer) {
+   eval(pre + layer + post).visibility = 'hidden';
+   eval(pre + layer + post).position = 'absolute'; }
+
+function hide_folder(folder) {
+    hide_folding_layer(folder)
+    show_layer('show'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function show_folder(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_layer('show'+folder+'_'+i); }
+}
+function show_folder_completely(folder) {
+    // Precondition: all subfolders are folded
+
+    show_layer('hide'+folder);
+    hide_layer('show'+folder);
+    show_layer('fold'+folder);
+
+    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+
+    var i;
+    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_folder_completely(folder+'_'+i); }
+}
+
+
+
+function hide_folding_layer(folder) {
+   var i;
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       hide_folding_layer(folder+'_'+i); }
+
+   hide_layer('hide'+folder);
+   hide_layer('show'+folder);
+   hide_layer('fold'+folder);
+
+   scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
+}
+
+function fold_document() {
+   var i;
+   var folder = '1';
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       hide_folder(folder+'_'+i); }
+}
+
+function unfold_document() {
+   var i;
+   var folder = '1';
+   for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
+       show_folder_completely(folder+'_'+i); }
+}
+
+</script>
+<SPAN class="foldspecial" onclick="fold_document()">All +</SPAN>
+<SPAN class="foldspecial" onclick="unfold_document()">All -</SPAN>
+<p><a href="MingLife.mm.html" target="_blank"><span class=l>~</span>&nbsp;SQL
+</a>
+<ul><li><span id="show1_1" class="foldclosed" onClick="show_folder('1_1')" style="POSITION: absolute">+</span> <span id="hide1_1" class="foldopened" onClick="hide_folder('1_1')">-</span>
+Integration Services
+<ul id="fold1_1" style="POSITION: relative; VISIBILITY: visible;"><li><p>Data Transformation Services (5) Analysis Services Tasks (4) Best Practices (4) Configuration Options (12) Connection Managers (3) Control Flow Transformations (4) Data Flow Transformations (8) Development (20) Email (2) Error Handling (3) Excel (6) Execute Package Options (4) Import and Export Wizard (2) NULL Management (3) Oracle (4) Performance (2) Security (2) Upgrade (3)
+</li>
+</ul>
+</li>
+<li><span id="show1_2" class="foldclosed" onClick="show_folder('1_2')" style="POSITION: absolute">+</span> <span id="hide1_2" class="foldopened" onClick="hide_folder('1_2')">-</span>
+Reporting Services
+<ul id="fold1_2" style="POSITION: relative; VISIBILITY: visible;"><li>Administration (3) 
+
+</li>
+<li>Analysis Services (2) 
+
+</li>
+<li>Best Practices (2) 
+
+</li>
+<li>Charts (13) 
+
+</li>
+<li>Configuration (3) 
+
+</li>
+<li>Custom Report (1) 
+
+</li>
+<li>Dashboard (1) 
+
+</li>
+<li>Data Sources (8) 
+
+</li>
+<li>Development (2) 
+
+</li>
+<li>Drill Through (4) 
+
+</li>
+<li>Dynamic Reports (9) 
+
+</li>
+<li>Filtering (1) 
+
+</li>
+<li>Formatting (1) 
+
+</li>
+<li>Functions (1) 
+
+</li>
+<li>Images (1) 
+
+</li>
+<li>Installation (4) 
+
+</li>
+<li>KPI (1) 
+
+</li>
+<li>Maps (2) 
+
+</li>
+<li>Migration (2) 
+
+</li>
+<li>Monitoring (5) 
+
+</li>
+<li>Network Load Balancing (4) 
+
+</li>
+<li>Overview (3) 
+
+</li>
+<li>Parameters (6) 
+
+</li>
+<li>Performance (5) 
+
+</li>
+<li>Report Builder (6) 
+
+</li>
+<li>Report Models (1) 
+
+</li>
+<li>Security (3) 
+
+</li>
+<li>SharePoint (1) 
+
+</li>
+<li>Subreports (4) 
+
+</li>
+<li>Tutorials (1)
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_3" class="foldclosed" onClick="show_folder('1_3')" style="POSITION: absolute">+</span> <span id="hide1_3" class="foldopened" onClick="hide_folder('1_3')">-</span>
+Analysis Services
+<ul id="fold1_3" style="POSITION: relative; VISIBILITY: visible;"><li><p>Administration (9) Development (14) Dimensions (5) Measure Groups (4) Performance (5) Security (5) Tools (1) Tutorials (4) Performance Point (4)
+</li>
+</ul>
+</li>
+<li><span id="show1_4" class="foldclosed" onClick="show_folder('1_4')" style="POSITION: absolute">+</span> <span id="hide1_4" class="foldopened" onClick="hide_folder('1_4')">-</span>
+Database Development 
+<ul id="fold1_4" style="POSITION: relative; VISIBILITY: visible;"><li><p>Aggregates (2) 
+<p>Application Development (7) 
+<p><span id="show1_4_1" class="foldclosed" onClick="show_folder('1_4_1')" style="POSITION: absolute">+</span> <span id="hide1_4_1" class="foldopened" onClick="hide_folder('1_4_1')">-</span>
+<span style="color: #338800;">Change Data Capture (4) </span>
+<ul id="fold1_4_1" style="POSITION: relative; VISIBILITY: visible;"><li>services
+<ul><li>view
+
+</li>
+<li>enable
+
+</li>
+<li>disable
+
+</li>
+
+</ul>
+</li>
+<li>table
+<ul><li>view
+
+</li>
+<li>cleanup
+
+</li>
+<li>enable
+<ul><li>sys.sp_cdc_enable_table 
+
+</li>
+
+</ul>
+</li>
+<li>disable
+<ul><li>sys.sp_cdc_disable_table
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>function
+<ul><li>sys.fn_cdc_map_lsn_to_time
+
+</li>
+<li>fn_cdc_map_time_to_lsn
+
+</li>
+<li>sys.sp_cdc_cleanup_change_table 
+
+</li>
+
+</ul>
+</li>
+<li>Stored Procedures
+<ul><li>sys.sp_cdc_help_change_data_capture 
+
+</li>
+<li>sys.sp_cdc_get_ddl_history &nbsp;@capture_instance = dbo_two_way_test1
+
+</li>
+
+</ul>
+</li>
+<li>job
+<ul><li>sys.sp_cdc_help_jobs
+
+</li>
+<li>sys.sp_cdc_add_job 
+
+</li>
+<li>sys.sp_cdc_drop_job
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Constraints (12) 
+<p>Data Types (5) 
+<p>Database Design (28) 
+<p>Dates (18) 
+<p>Debugging (3) 
+<p>Dynamic Management Views and Functions (25) 
+<p>Dynamic SQL (5) 
+<p>Encryption (15) 
+<p>Entity Framework (4) 
+<p>Error Handling (6) 
+<p>Full Text Search (13) 
+<p>Functions - System (23) 
+<p>Functions - User Defined UDF (23) 
+<p>Identities (11) 
+<p>Import and Export (7) 
+<p>JOIN Tables (9) 
+<p>Language Integrated Query LINQ (6) 
+<p>Microsoft Access Integration (6) 
+<p>Microsoft Excel Integration (10) 
+<p>Paging (5) 
+<p>Query Optimization (6) 
+<p>Query Plans (11) 
+<p>Scripts (25) 
+<p>Service Broker (8) 
+<p>Spatial Data Storage (7) 
+<p>SQL Server Management Objects SMO (3) 
+<p>Stored Procedures (10) 
+<p>Synonyms (3) 
+<p>T-SQL (43) 
+&#xd;&#xa;    <p>&#xd;&#xa;      Table Valued Parameters (3)&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Testing (15)&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Triggers (19)&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      User Defined Type UDT (1)&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Views (6)&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      XML (8)&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li>Database Administration
+<ul><li><p>Database Administration AlwaysOn Availability (11) 
+<p>Auditing and Compliance (18) 
+<ul><li>relate
+<ul><li>profiler
+
+</li>
+<li>track
+
+</li>
+<li>control
+
+</li>
+
+</ul>
+</li>
+<li>&#19968;&#33324;&#31243;&#24207;
+<ul><li>1.&#24314;&#31435;&#31293;&#26680;&#65292;&#20006;&#23450;&#32681;&#30446;&#27161;
+
+</li>
+<li>2.&#24314;&#31435;&#23565;&#25033;&#33267;&#31293;&#26680;&#30340;&#20282;&#26381;&#22120;&#31293;&#26680;&#35215;&#26684;&#25110;&#36039;&#26009;&#24235;&#31293;&#26680;&#35215;&#26684;&#12290;&#160;&#21855;&#29992;&#35442;&#31293;&#26680;&#35215;&#26684;&#12290;
+
+</li>
+<li>3.&#21855;&#29992;&#31293;&#26680;
+
+</li>
+<li>4. &#20351;&#29992;&nbsp;Windows&#160;[&#20107;&#20214;&#27298;&#35222;&#22120;]&#12289;[&#35352;&#37636;&#27284;&#27298;&#35222;&#22120;]&#160;&#25110;&#26159; fn_get_audit_file &#20989;&#25976;&#20358;&#38321;&#35712;&#31293;&#26680;&#20107;&#20214;&#12290;&nbsp;
+
+</li>
+
+</ul>
+</li>
+<li>&#36039;&#26009;&#23450;&#32681;&#35486;&#35328;&#38515;&#36848;&#24335; 
+<ul><li>Server Audit (create , drop , alter ) &nbsp;
+
+</li>
+<li>Authorization(alter) 
+
+</li>
+<li>Database audit specification (create ,drop ,alter) 
+
+</li>
+<li>Server Audit specification (create ,drop ,alter)
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_5" class="foldclosed" onClick="show_folder('1_5')" style="POSITION: absolute">+</span> <span id="hide1_5" class="foldopened" onClick="hide_folder('1_5')">-</span>
+&#21205;&#24907;&#27298;&#35222;&#21644;&#20989;&#25976; 
+<ul id="fold1_5" style="POSITION: relative; VISIBILITY: visible;"><li><p>sys.dm_audit_actions &#20659;&#22238;&#31293;&#26680;&#35352;&#37636;&#27284;&#20013;&#21487;&#22577;&#21578;&#30340;&#27599;&#19968;&#20491;&#31293;&#26680;&#21205;&#20316;&#21450;&nbsp;SQL Server Audit &#20013;&#21487;&#35373;&#23450;&#20043;&#27599;&#19968;&#20491;&#31293;&#26680;&#21205;&#20316;&#32676;&#32068;&#30340;&#36039;&#26009;&#21015;&#12290;&nbsp;
+<p>sys.dm_server_audit_status &#25552;&#20379;&#26377;&#38364;&#31293;&#26680;&#20043;&#30446;&#21069;&#29376;&#24907;&#30340;&#36039;&#35338;&#12290;&nbsp;
+<p>sys.dm_audit_class_type_map &#20659;&#22238;&#19968;&#20491;&#36039;&#26009;&#34920;&#65292;&#36889;&#20491;&#36039;&#26009;&#34920;&#26371;&#23559;&#31293;&#26680;&#35352;&#37636;&#27284;&#20013;&#30340;&nbsp;class_type &#27396;&#20301;&#23565;&#25033;&#21040;&nbsp;sys.dm_audit_actions &#20013;&#30340;&nbsp;class_desc &#27396;&#20301;&#12290;&nbsp;
+<p>fn_get_audit_file &nbsp;&#24478;&#20282;&#26381;&#22120;&#31293;&#26680;&#24314;&#31435;&#30340;&#31293;&#26680;&#27284;&#26696;&#20013;&#20659;&#22238;&#36039;&#35338;&#12290;&nbsp;
+</li>
+</ul>
+</li>
+<li><span id="show1_6" class="foldclosed" onClick="show_folder('1_6')" style="POSITION: absolute">+</span> <span id="hide1_6" class="foldopened" onClick="hide_folder('1_6')">-</span>
+&#30446;&#37636;&#27298;&#35222; 
+<ul id="fold1_6" style="POSITION: relative; VISIBILITY: visible;"><li>sys.database_ audit_specifications &#21253;&#21547;&#26377;&#38364;&#20282;&#26381;&#22120;&#22519;&#34892;&#20491;&#39636;&#19978;&nbsp;SQL Server &#31293;&#26680;&#20839;&#20043;&#36039;&#26009;&#24235;&#31293;&#26680;&#35215;&#26684;&#30340;&#36039;&#35338;&#12290;&nbsp;
+
+</li>
+<li>sys.database_audit_specification_details &#21253;&#21547;&#26377;&#38364;&#20282;&#26381;&#22120;&#22519;&#34892;&#20491;&#39636;&#19978;&#25152;&#26377;&#36039;&#26009;&#24235;&#30340;&nbsp;SQL Server &#31293;&#26680;&#20839;&#20043;&#36039;&#26009;&#24235;&#31293;&#26680;&#35215;&#26684;&#30340;&#36039;&#35338;&#12290;&nbsp;
+
+</li>
+<li>sys.server_audits &#37341;&#23565;&#20282;&#26381;&#22120;&#22519;&#34892;&#20491;&#39636;&#20013;&#30340;&#27599;&#19968;&#20491;&nbsp;SQL Server &#31293;&#26680;&#21508;&#21253;&#21547;&#19968;&#20491;&#36039;&#26009;&#21015;&#12290;&nbsp;
+
+</li>
+<li>sys.server_audit_specifications &#21253;&#21547;&#26377;&#38364;&#20282;&#26381;&#22120;&#22519;&#34892;&#20491;&#39636;&#19978;&nbsp;SQL Server &#31293;&#26680;&#20839;&#20043;&#20282;&#26381;&#22120;&#31293;&#26680;&#35215;&#26684;&#30340;&#36039;&#35338;&#12290;&nbsp;
+
+</li>
+<li>sys.server_audit_specifications_details &#21253;&#21547;&#26377;&#38364;&#20282;&#26381;&#22120;&#22519;&#34892;&#20491;&#39636;&#19978;&nbsp;SQL Server &#31293;&#26680;&#20839;&#20043;&#20282;&#26381;&#22120;&#31293;&#26680;&#35215;&#26684;&#35443;&#32048;&#36039;&#26009;&nbsp;(&#21205;&#20316;) &#30340;&#36039;&#35338;&#12290;&nbsp;
+
+</li>
+<li>sys.server_file_audits &#21253;&#21547;&#26377;&#38364;&#20282;&#26381;&#22120;&#22519;&#34892;&#20491;&#39636;&#19978;&nbsp;SQL Server &#31293;&#26680;&#20839;&#20043;&#27284;&#26696;&#31293;&#26680;&#39006;&#22411;&#30340;&#23384;&#25918;&#21312;&#25844;&#20805;&#36039;&#35338;&#12290;&nbsp;
+
+</li>
+
+</ul>
+</li>
+<li>Audit Type
+<ul><li>Server level
+<ul><li><span style="color: #338800;">Actions that impact the entire server</span>
+
+</li>
+<li><span style="color: #338800;">Action that monitor changes across all databases</span>
+
+</li>
+<li><span style="color: #338800;">Action that monitor changes to schemas to all database</span>
+
+</li>
+<li>Server-Level Action groups
+<ul><li>Successful_login_group
+
+</li>
+<li>Failed_login_group
+
+</li>
+<li>server_role_member_change_group
+
+</li>
+<li>database_role_member_change_group
+
+</li>
+<li>Server_object_change_group
+
+</li>
+<li>server_principal_change_group
+
+</li>
+<li>database_change_group
+
+</li>
+<li>database_principal_change_group
+
+</li>
+<li>Server_permission_change_group
+
+</li>
+<li>database_object_permission_change_group
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Database level
+<ul><li>object , schema 
+
+</li>
+<li>select , delete update ,insert 
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><p>Backup (41) 
+<p>Central Management Servers (5) 
+<p>Clustering (37) 
+<p>Comparison - Data and Objects (6) 
+<p>Compression (10) 
+<p>Contained Databases (2) 
+<p>Data Quality Services (4) 
+<p>Database Administration (69) 
+<p>Database Consistency Checks DBCCs (8) 
+<p>Database Mail (8) 
+<p>Database Mirroring (15) 
+<p>DBA Best Practices (27) 
+<p>Deprecated Features (5) 
+<p>Disaster Recovery (16) 
+<p>Error Logs (5) 
+<p>Express Edition (9) 
+<p>Extended Events (4) 
+<p>FILESTREAM (7) 
+<p>Fragmentation and Index Maintenance (22) 
+<p>Hardware (11) 
+<p><span id="show1_7" class="foldclosed" onClick="show_folder('1_7')" style="POSITION: absolute">+</span> <span id="hide1_7" class="foldopened" onClick="hide_folder('1_7')">-</span>
+High Availability (2) 
+<ul id="fold1_7" style="POSITION: relative; VISIBILITY: visible;"><li>&#39640;&#21487;&#29992;&#24615;&#33287;&#28797;&#23475;&#24489;&#21407;&#27010;&#24565;
+<ul><li>&#31995;&#32113;&#30340;&#21487;&#29992;&#24615;&#21487;&#25353;&#27492;&#35336;&#31639;&#26041;&#24335;
+
+</li>
+<li>&#38928;&#35330;&#21644;&#24847;&#22806;&#30340;&#20572;&#27231;&#26178;&#38291;
+<ul><li>&#38928;&#23450;&#36914;&#34892;&#30340;&#32173;&#20462;&#20316;&#26989;
+
+</li>
+<li>&#24847;&#22806;&#30340;&#20013;&#26039;
+
+</li>
+
+</ul>
+</li>
+<li>&#37327;&#21270;&#20572;&#27231;&#26178;&#38291;
+<ul><li>&#24489;&#21407;&#30446;&#27161;
+<ul><li>&#30446;&#27161;&#24489;&#21407;&#26178;&#38291; (RTO)
+
+</li>
+<li>&#30446;&#27161;&#24489;&#21407;&#26178;&#40670; (RPO)
+
+</li>
+
+</ul>
+</li>
+<li>&#35519;&#25972; ROI &#25110;&#27231;&#26371;&#25104;&#26412;
+<ul><li>&#36991;&#20813;&#20572;&#27231;&#26178;&#38291;
+
+</li>
+<li>&#33258;&#21205;&#24489;&#21407;
+
+</li>
+<li>&#36039;&#28304;&#20351;&#29992;&#24773;&#27841;
+
+</li>
+
+</ul>
+</li>
+<li>&#30435;&#35222;&#21487;&#29992;&#24615;&#29376;&#27841;
+
+</li>
+<li><span id="show1_7_1" class="foldclosed" onClick="show_folder('1_7_1')" style="POSITION: absolute">+</span> <span id="hide1_7_1" class="foldopened" onClick="hide_folder('1_7_1')">-</span>
+&#35215;&#21123;&#28797;&#23475;&#24489;&#21407;
+<ul id="fold1_7_1" style="POSITION: relative; VISIBILITY: visible;"><li>&#22833;&#25943;&#21450;&#24489;&#21407;&#30340;&#31934;&#32048;&#35519;&#25972;
+
+</li>
+<li>&#35519;&#26597;&#20358;&#28304;&#26448;&#26009;
+
+</li>
+<li>&#30456;&#20381;&#24615;&#21332;&#35519;
+
+</li>
+<li>&#27770;&#31574;&#27193;
+
+</li>
+<li>&#39511;&#35657;
+
+</li>
+<li>&#25991;&#20214;
+
+</li>
+<li>&#24489;&#21407;&#38928;&#28436;
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>disaster recovery
+<ul><li>Standby data center recovery options
+<ul><li>cold standy
+
+</li>
+<li>warm standby
+
+</li>
+<li>Hot Standby
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><p>Indexing (38) 
+<p>Install and Uninstall (13) 
+<p>Licensing (1) 
+<p>Linked Servers (8) 
+<p>Locking and Blocking (14) 
+<p>Log Shipping (8) 
+<p>Maintenance (15) 
+<p>Master Data Services (5) 
+<p><span id="show1_8" class="foldclosed" onClick="show_folder('1_8')" style="POSITION: absolute">+</span> <span id="hide1_8" class="foldopened" onClick="hide_folder('1_8')">-</span>
+<span style="color: #ff0000;">Monitoring (27) </span>
+<ul id="fold1_8" style="POSITION: relative; VISIBILITY: visible;"><li>checklist
+<ul><li>1 - SQL Server services running
+
+</li>
+<li>2 - SQL Agent Jobs run successfully
+
+</li>
+<li>3 - recent backup of all your SQL Server databases
+
+</li>
+<li>4 &nbsp;- any errors in your SQL Server Error Log
+
+</li>
+<li>5 &nbsp;out of space on any of your disks on your SQL Server
+
+</li>
+<li>6 low on server memory for SQL Server
+
+</li>
+<li>7 SQL Server statements in the cache that could use tuning?
+
+</li>
+<li>8.connections 
+
+</li>
+<li>9-How many requests is your SQL Server processing
+
+</li>
+<li><span id="show1_8_1" class="foldclosed" onClick="show_folder('1_8_1')" style="POSITION: absolute">+</span> <span id="hide1_8_1" class="foldopened" onClick="hide_folder('1_8_1')">-</span>
+10. Security
+<ul id="fold1_8_1" style="POSITION: relative; VISIBILITY: visible;"><li>Configuring SQL Server to Audit for Failed Logins
+
+</li>
+<li>Setting the counter for master.dbo.sp_user_counter1
+
+</li>
+<li>Configure a SQL Server Agent Job to Monitor for Failed Logins
+
+</li>
+<li>Test the SQL Server Failed Login Process
+
+</li>
+
+</ul>
+</li>
+<li>11. Transcation Log
+
+</li>
+<li>12.HA (cluster , mirrior , alwayson , replication )
+
+</li>
+<li>13. Database Object
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_8_2" class="foldclosed" onClick="show_folder('1_8_2')" style="POSITION: absolute">+</span> <span id="hide1_8_2" class="foldopened" onClick="hide_folder('1_8_2')">-</span>
+Notifications
+<ul id="fold1_8_2" style="POSITION: relative; VISIBILITY: visible;"><li>setup SQL Server alerts and email operator notifications
+
+</li>
+<li>Automate SQL Server Monitoring with Email Alerts
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_8_3" class="foldclosed" onClick="show_folder('1_8_3')" style="POSITION: absolute">+</span> <span id="hide1_8_3" class="foldopened" onClick="hide_folder('1_8_3')">-</span>
+alarm
+<ul id="fold1_8_3" style="POSITION: relative; VISIBILITY: visible;"><li>event 
+
+</li>
+<li>performace count
+
+</li>
+<li>WMI
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_8_4" class="foldclosed" onClick="show_folder('1_8_4')" style="POSITION: absolute">+</span> <span id="hide1_8_4" class="foldopened" onClick="hide_folder('1_8_4')">-</span>
+Tool
+<ul id="fold1_8_4" style="POSITION: relative; VISIBILITY: visible;"><li>sp_server_diagnostics
+
+</li>
+<li>performance Dashboard
+
+</li>
+<li>utility control point
+
+</li>
+<li>Activity monitor Tool
+
+</li>
+<li>SQL command Line
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Other Database Platforms (5) 
+<p>Partitioning (8) 
+<p>Performance Data Warehouse (4) 
+<p><span style="color: #ff0000;">Performance Tuning (59) </span>
+<ul><li>inspection
+<ul><li>bult-in
+
+</li>
+
+</ul>
+</li>
+<li>The Performance Tuning Process
+<ul><li><p>Is any other resource-intensive application running on the same server
+<p>Is the capacity of the hardware subsystem capable of withstanding the maximum workload
+<p>Is SQL Server configured properly?
+<p>Is the database connection between SQL Server and the database application efficient?
+<p>Does the database des &#8226;&nbsp;ign support the fastest data retrieval (and modification for an updatable database)?
+<p>Is the user workload, consisting of SQL queries, optimized to reduce the load on SQL Server
+<p>What processes are causing the system to slow down as reflected in the measurement of various wait states, performance counters, and dynamic management objects
+<p>Does the workload support the required level of concurrency?
+</li>
+</ul>
+</li>
+<li>tools
+<ul><li>&#21487;&#38752;&#24615;&#33287;&#25928;&#33021;&#30435;&#35222;&#22120;
+<ul><li>&#25928;&#33021;&#29289;&#20214;
+
+</li>
+<li>&#25928;&#33021;&#35336;&#25976;&#22120;
+<ul><li>Disk
+<ul><li>PhysicalDisk: Avg. Disk sec/Write
+
+</li>
+<li>Physical Disk&#8212;% Disk Time &nbsp;&nbsp;&nbsp;&nbsp;&#24179;&#22343;&#25033;&#20302;&#26044;50% 
+
+</li>
+<li>PhysicalDisk: Avg. Disk sec/Read
+
+</li>
+<li>Physical Disk&#8212;Avg. Disk Writes/ sec
+
+</li>
+<li>Physical Disk&#8212;Avg. Disk Queue Length &nbsp;&#27599;&#20491;&#30913;&#30879;&#24179;&#22343;&#25033;&#20302;&#26044;2&#12290;&#22914;&#26524;&#26159;5&#20491;&#30913;&#30879;&#30340;&#38499;&#21015;&#65292;&#27492;&#35336;&#25976;&#22120;&#24179;&#22343;&#25033;&#35442;&#20302;&#26044;10&#12290;
+
+</li>
+<li>SQL Server:Buffer Manager:Page reads/sec 
+
+</li>
+<li>SQL Server:Buffer Manager:Page writes/sec
+
+</li>
+<li>SQL Server:Buffer Manager:Checkpoint pages/sec
+
+</li>
+<li>SQL Server:Buffer Manager:Lazy writes/sec
+
+</li>
+
+</ul>
+</li>
+<li>CPU
+<ul><li>Process: Page Faults/sec&#160;
+
+</li>
+<li>Processor:% Processor Time&#160;
+
+</li>
+<li>System: %Total Processor Time&#160;
+
+</li>
+<li>Processor: % Privileged Time 
+
+</li>
+<li>Processor: %User Time
+
+</li>
+<li>System: Processor Queue Length
+
+</li>
+<li>%DPC Time
+
+</li>
+
+</ul>
+</li>
+<li>Memory
+<ul><li>Memory: Available Bytes
+
+</li>
+<li>Memory: Pages/sec 
+
+</li>
+<li>Memory: Page Faults/sec
+
+</li>
+<li>Page Input/sec 
+
+</li>
+<li>Page Reads/sec 
+
+</li>
+<li>Process: Working Set &nbsp;
+
+</li>
+<li>SQL Server: Buffer Manager: Buffer Cache Hit Ratio 
+
+</li>
+<li>SQL Server: Buffer Manager: Database Pages
+
+</li>
+<li>SQL Server: Memory Manager: Total Server Memory (KB)
+
+</li>
+<li>cache Byte
+
+</li>
+<li>SQL Server: Buffer Manager:Page Life Expectancy &#29992;&#20358;&#35413;&#20272;&#35352;&#25014;&#39636;&#22823;&#23567;&#65292;&#25033;&#35442;&#32173;&#25345;&#22312;300&#31186;&#20197;&#19978;&#12290;
+
+</li>
+<li>SQL Server: General Statistics&#8212; User Connections &#29992;&#20358;&#35413;&#20272;&#35352;&#25014;&#39636;&#22823;&#23567;
+
+</li>
+<li>SQL Server: Databases&#8212; Transactions/sec &nbsp;&#29992;&#20358;&#35413;&#20272;&#20132;&#26131;&#37327;&#22810;&#23521;&#33287;CPU&#36895;&#24230;&#12290;
+
+</li>
+<li>SQL Server: Databases&#8212;Data File(s) Size KB &nbsp;&#29992;&#20358;&#35413;&#20272;&#36039;&#26009;&#27284;&#22823;&#23567;
+
+</li>
+<li>SQL Server: Databases&#8212;Percent Log Used &#29992;&#20358;&#35413;&#20272;&#20132;&#26131;&#35352;&#37636;&#27284;&#22823;&#23567;&#12290;
+
+</li>
+<li>SQL Server:SQL Statistics-Batch Requests/sec
+
+</li>
+
+</ul>
+</li>
+<li>Network
+<ul><li>Network Interface&#8212;Bytes Total/sec
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>&#20363;&#38917;
+<ul><li>&#26816;&#26597;&#36807;&#20110;&#39057;&#32321;&#30340;&#39029;&#20132;&#25442;
+
+</li>
+
+</ul>
+</li>
+<li>&#22294;&#34920;
+
+</li>
+<li>&#21363;&#26178;&#30435;&#30475;
+
+</li>
+<li>&#38263;&#26399;&#35264;&#23519;
+
+</li>
+
+</ul>
+</li>
+<li>SQL Trace &#33287;SQL Server Profiler
+<ul><li>SQL Trace &#8211;&nbsp;Server-side
+
+</li>
+<li>ad
+
+</li>
+
+</ul>
+</li>
+<li>Database Engine Tuning Advisor
+
+</li>
+<li>Management Studio &#27161;&#28310;&#22577;&#34920;
+<ul><li><span id="show1_9" class="foldclosed" onClick="show_folder('1_9')" style="POSITION: absolute">+</span> <span id="hide1_9" class="foldopened" onClick="hide_folder('1_9')">-</span>
+Server
+<ul id="fold1_9" style="POSITION: relative; VISIBILITY: visible;"><li><p>Server Dashboard &nbsp;
+<p>Configuration Changes History 
+<p>Schema Changes History 
+<p>Scheduler Health 
+<p>Memory Consumption 
+<p>Activity &#8211;&nbsp;All Blocking Transactions 
+<p>Activity &#8211;&nbsp;All Cursors 
+<p>Activity &#8211;&nbsp;Top Cursors 
+<p>Activity &#8211;&nbsp;All Sessions 
+<p>Activity &#8211;&nbsp;Top Sessions 
+<p>Activity &#8211;&nbsp;Dominant Sessions 
+<p>Activity &#8211;&nbsp;Top Connections 
+<p>Top Transactions by Age 
+<p>Top Transactions by Blocked Transactions Count 
+<p>Top Transactions by Locks Count 
+<p>Performance &#8211;&nbsp;Batch Execution Statistics 
+<p>Performance &#8211;&nbsp;Object Execution Statistics 
+<p>Performance &#8211;&nbsp;Top Queries by Average CPU Time 
+<p>Performance &#8211;&nbsp;Top Queries by Average IO 
+<p>Performance &#8211;&nbsp;Top Queries by Total CPU Time 
+&#xd;&#xa;    <p>&#xd;&#xa;      Performance &#x2013; Top Queries by Total IO&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Server Broker Statistics&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Transaction Log Shipping Status&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li>Databases
+<ul><li><p>Disk Usage Disk Usage by Top Tables Disk Usage by Table Disk Usage by Partition Backup and Restore Events All Transactions All Blocking Transactions Top Transactions by Age Top Transactions by Blocked Transactions Count Top Transactions by Locks Count Resource Locking Statistics by Objects Object Execution Statistics Database Consistency History Index Usage Statistics Index Physical Statistics Schema Changes History User Statistics
+</li>
+</ul>
+</li>
+<li>Logins
+<ul><li>Login Statistics Login Failures Resource Locking Statistics by Logins
+
+</li>
+
+</ul>
+</li>
+<li>SQL server agent
+<ul><li>&#xd;&#xa;    <p>&#xd;&#xa;      Job Steps Execution History&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Top Jobs&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li>Manageement
+<ul><li>&#xd;&#xa;    <p>&#xd;&#xa;      Tasks&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Number of Errors&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li>Notification Services
+<ul><li>General
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Performance Dashboard Reports
+
+</li>
+<li><span id="show1_10" class="foldclosed" onClick="show_folder('1_10')" style="POSITION: absolute">+</span> <span id="hide1_10" class="foldopened" onClick="hide_folder('1_10')">-</span>
+&#36039;&#26009;&#25910;&#38598;&#22120;
+<ul id="fold1_10" style="POSITION: relative; VISIBILITY: visible;"><li>&#25490;&#31243;
+
+</li>
+<li>&#20572;&#27490;&#26781;&#20214;
+
+</li>
+<li>&#24037;&#20316;
+
+</li>
+<li>&#36039;&#26009;&#25910;&#38598;&#22120;
+<ul><li>&#25928;&#33021;&#35336;&#25976;&#22120;&#36039;&#26009;&#25910;&#38598;&#22120;
+
+</li>
+<li>&#20107;&#20214;&#36861;&#36452;&#36039;&#26009;&#25910;&#38598;&#22120;
+
+</li>
+<li>&#32068;&#24907;&#36039;&#26009;&#25910;&#38598;&#22120;
+
+</li>
+<li>&#25928;&#33021;&#35336;&#25976;&#22120;&#35686;&#35338;
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>&#26597;&#35426;&#22519;&#34892;&#35336;&#30059;
+
+</li>
+<li><span id="show1_11" class="foldclosed" onClick="show_folder('1_11')" style="POSITION: absolute">+</span> <span id="hide1_11" class="foldopened" onClick="hide_folder('1_11')">-</span>
+&#22739;&#21147;&#28204;&#35430;&#24037;&#20855;&#31243;&#24335; 
+<ul id="fold1_11" style="POSITION: relative; VISIBILITY: visible;"><li>&#xd;&#xa;    <p>&#xd;&#xa;      Microsoft Application Center Test&#xa0;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Microsoft Web Application Stress Tool&#xa0;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      LoadSim.exe&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x81ea;&#x884c;&#x64b0;&#x5beb;&#x6e2c;&#x8a66;&#x7a0b;&#x5f0f;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li>Distributed Replay Utility
+
+</li>
+<li>Database Console Commands (DBCC)
+
+</li>
+<li><span id="show1_12" class="foldclosed" onClick="show_folder('1_12')" style="POSITION: absolute">+</span> <span id="hide1_12" class="foldopened" onClick="hide_folder('1_12')">-</span>
+DMV Dynamic Management View
+<ul id="fold1_12" style="POSITION: relative; VISIBILITY: visible;"><li>&#31995;&#32113;&#20013;&#32380;&#36039;&#26009;
+
+</li>
+<li>&#21205;&#24907;&#31649;&#29702;&#27298;&#35222;
+
+</li>
+<li>&#21205;&#24907;&#31649;&#29702;&#20989;&#25976;
+
+</li>
+<li>catalog &nbsp;total:21
+<ul><li>AlwaysOn Availability Group 
+
+</li>
+<li>Change Data Capture 
+
+</li>
+<li>Change Tracking
+
+</li>
+<li>Common Language Runtime
+
+</li>
+<li>Database Mirroring
+
+</li>
+<li>Database
+
+</li>
+<li>Execution
+
+</li>
+<li>Extended Events
+
+</li>
+<li>Filestream and FileTable 
+
+</li>
+<li>Full-Text Search and Semantic Search 
+
+</li>
+<li>I/O
+
+</li>
+<li>Index
+
+</li>
+<li>Object 
+
+</li>
+<li>Query 
+
+</li>
+<li>Replication
+
+</li>
+<li>Resource Governor 
+
+</li>
+<li>SQL Server Operating System 
+
+</li>
+<li>Security 
+
+</li>
+<li>Service Broker 
+
+</li>
+<li>Transaction
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>&#36861;&#36452;&#26071;&#27161;
+
+</li>
+<li><span id="show1_13" class="foldclosed" onClick="show_folder('1_13')" style="POSITION: absolute">+</span> <span id="hide1_13" class="foldopened" onClick="hide_folder('1_13')">-</span>
+SQLDiag/PSSDiag
+<ul id="fold1_13" style="POSITION: relative; VISIBILITY: visible;"><li><p>Windows Performance Logs 
+&#xd;&#xa;    <p>&#xd;&#xa;      Windows Event Logs&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      SQL Traces&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      SQL blocking info&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      SQL Configuration info&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li>SQLNexus
+
+</li>
+<li>RML Utilities
+
+</li>
+<li>PAL Tool
+
+</li>
+<li>SQLIO
+
+</li>
+<li>SQLIO Disk Subsystem Benchmark Tool
+
+</li>
+<li>SQLIOSim
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_14" class="foldclosed" onClick="show_folder('1_14')" style="POSITION: absolute">+</span> <span id="hide1_14" class="foldopened" onClick="hide_folder('1_14')">-</span>
+method
+<ul id="fold1_14" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_14_1" class="foldclosed" onClick="show_folder('1_14_1')" style="POSITION: absolute">+</span> <span id="hide1_14_1" class="foldopened" onClick="hide_folder('1_14_1')">-</span>
+&#21152;&#36895;&#36039;&#26009;&#24235;&#34389;&#29702;
+<ul id="fold1_14_1" style="POSITION: relative; VISIBILITY: visible;"><li>&#36039;&#26009;&#34920;&#35373;&#35336;
+
+</li>
+<li>&#32034;&#24341;&#35373;&#35336;
+<ul><li>&#22739;&#32302;&#32034;&#24341;
+
+</li>
+<li><span style="color: #338800;">&#31721;&#36984;&#32034;&#24341;(Filtered indexes)</span>
+
+</li>
+
+</ul>
+</li>
+<li>&#36039;&#26009;&#24235;&#29289;&#20214;
+
+</li>
+<li>&#36039;&#26009;&#34920;&#22739;&#32302;
+
+</li>
+<li>&#20633;&#20221;&#22739;&#32302;
+
+</li>
+<li>&#37782;&#23450; 
+
+</li>
+<li>&#35486;&#27861;
+<ul><li>&#19968;&#27425;&#21487;&#26032;&#22686;&#22810;&#31558;&#36039;&#26009;
+
+</li>
+<li>&#24120;&#25976;&#36039;&#26009;&#34920;
+
+</li>
+<li>&#36039;&#26009;&#34920;&#20540;&#21443;&#25976;
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_14_2" class="foldclosed" onClick="show_folder('1_14_2')" style="POSITION: absolute">+</span> <span id="hide1_14_2" class="foldopened" onClick="hide_folder('1_14_2')">-</span>
+&#22686;&#21152;&#20282;&#26381;&#22120;&#34389;&#29702;
+<ul id="fold1_14_2" style="POSITION: relative; VISIBILITY: visible;"><li>&#30913;&#30879;&#35215;&#21123;
+<ul><li>&#30913;&#30879;&#38499;&#21015;&#26368;&#20339;&#21270;
+<ul><li>&#36039;&#26009;&#20998;&#21106;
+
+</li>
+
+</ul>
+</li>
+<li>Tempdb &#20043;&#35215;&#21123;
+
+</li>
+<li>&#20132;&#26131;&#35352;&#37636;&#27284;&#33287;&#36039;&#26009;&#27284;&#20786;&#23384;&#26044;&#19981;&#21516;&#30913;&#30879;&#32068;
+
+</li>
+<li>&#22810;&#20491;&#27284;&#26696;&#32676;&#32068;&#25645;&#37197;&#22810;&#20491;&#36039;&#26009;&#27284;&#26696;
+
+</li>
+<li>&#20998;&#21106;&#36039;&#26009;&#34920;&#12289;&#20998;&#21106;&#32034;&#24341;&#12289;&#36039;&#26009;&#34920;&#22739;&#32302;
+
+</li>
+
+</ul>
+</li>
+<li>64&#20301;&#20803;&#31995;&#32113;
+
+</li>
+<li>&#20805;&#36275;&#30340;&#35352;&#25014;&#39636;
+
+</li>
+<li>&#36039;&#28304;&#31649;&#29702;&#21729;
+
+</li>
+<li><span id="show1_14_2_1" class="foldclosed" onClick="show_folder('1_14_2_1')" style="POSITION: absolute">+</span> <span id="hide1_14_2_1" class="foldopened" onClick="hide_folder('1_14_2_1')">-</span>
+&#26356;&#20778;&#36234;&#30340;&#20786;&#23384;&#39636;&#32080;&#27083;
+<ul id="fold1_14_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>HierarchyID &#36039;&#26009;&#39006;&#22411;
+
+</li>
+<li>&#30095;&#39686;&#36039;&#26009;&#34892;(Sparse Columns)
+
+</li>
+<li>&nbsp;
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_14_3" class="foldclosed" onClick="show_folder('1_14_3')" style="POSITION: absolute">+</span> <span id="hide1_14_3" class="foldopened" onClick="hide_folder('1_14_3')">-</span>
+&#22810;&#37096;&#20282;&#26381;&#22120;&#26550;&#27083;
+<ul id="fold1_14_3" style="POSITION: relative; VISIBILITY: visible;"><li>&#20998;&#25955;&#24335;&#26597;&#35426;
+
+</li>
+<li>&#20998;&#21106;&#27298;&#35222;&#34920;
+
+</li>
+<li>&#35079;&#23531;
+
+</li>
+<li>&#21487;&#25844;&#20805;&#20849;&#29992;&#36039;&#26009;&#24235;
+
+</li>
+
+</ul>
+</li>
+<li>&#31243;&#24335;&#35373;&#35336;
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_15" class="foldclosed" onClick="show_folder('1_15')" style="POSITION: absolute">+</span> <span id="hide1_15" class="foldopened" onClick="hide_folder('1_15')">-</span>
+Step
+<ul id="fold1_15" style="POSITION: relative; VISIBILITY: visible;"><li>&#xd;&#xa;    <p>&#xd;&#xa;      &#x6c7a;&#x5b9a;&#x60a8;&#x7684;&#x76e3;&#x8996;&#x76ee;&#x6a19;&#x3002;&#xd;&#xa;    </p>&#xd;&#xa;  
+<ul><li><p>&#24314;&#31435;&#25928;&#33021;&#22522;&#28310;&#32218;&#12290; 
+<p>&#35672;&#21029;&#25928;&#33021;&#35722;&#26356;&#36264;&#21218;&#12290; 
+<p>&#35386;&#26039;&#29305;&#23450;&#25928;&#33021;&#21839;&#38988;&#12290; 
+<p>&#35672;&#21029;&#35201;&#26368;&#20339;&#21270;&#30340;&#20803;&#20214;&#25110;&#34389;&#29702;&#24207;&#12290; 
+<p>&#27604;&#36611;&#19981;&#21516;&#29992;&#25142;&#31471;&#25033;&#29992;&#31243;&#24335;&#22312;&#25928;&#33021;&#19978;&#30340;&#24433;&#38911;&#12290; 
+<p>&#31293;&#26680;&#20351;&#29992;&#32773;&#27963;&#21205;&#12290; 
+<p>&#20197;&#19981;&#21516;&#30340;&#36000;&#36617;&#20358;&#28204;&#35430;&#20282;&#26381;&#22120;&#12290; 
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x6e2c;&#x8a66;&#x8cc7;&#x6599;&#x5eab;&#x67b6;&#x69cb;&#x3002;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x6e2c;&#x8a66;&#x7dad;&#x8b77;&#x6392;&#x7a0b;&#x3002;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x6e2c;&#x8a66;&#x5099;&#x4efd;&#x8207;&#x9084;&#x539f;&#x8a08;&#x756b;&#x3002;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x6c7a;&#x5b9a;&#x4fee;&#x6539;&#x786c;&#x9ad4;&#x7d44;&#x614b;&#x7684;&#x6642;&#x9593;&#x3002;&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>&#xd;&#xa;    <p>&#xd;&#xa;      &#x9078;&#x53d6;&#x9069;&#x7576;&#x7684;&#x5de5;&#x5177;&#x3002;&#xd;&#xa;    </p>&#xd;&#xa;  
+<ul><li>&nbsp;
+
+</li>
+
+</ul>&#xd;&#xa;    <p>&#xd;&#xa;      &#xa0;&#x8b58;&#x5225;&#x8981;&#x76e3;&#x8996;&#x7684;&#x5143;&#x4ef6;&#x3002;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x9078;&#x53d6;&#x9019;&#x4e9b;&#x5143;&#x4ef6;&#x7684;&#x6a19;&#x6e96;&#x3002;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x76e3;&#x8996;&#x4f3a;&#x670d;&#x5668;&#x3002;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x5206;&#x6790;&#x8cc7;&#x6599;&#x3002;&#xd;&#xa;    </p>&#xd;&#xa;  
+<ul><li><p>&#22871;&#29992;&#31721;&#36984;&#20358;&#38480;&#21046;&#35201;&#25910;&#38598;&#30340;&#20107;&#20214;&#36039;&#26009;&#12290; 
+<p>&#30435;&#35222; (&#25847;&#21462;) &#20107;&#20214;&#12290;&nbsp;
+<p>&#20786;&#23384;&#25847;&#21462;&#30340;&#20107;&#20214;&#36039;&#26009;&#12290; 
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x5efa;&#x7acb;&#x5305;&#x542b;&#x6307;&#x5b9a;&#x8a2d;&#x5b9a;&#x7684;&#x8ffd;&#x8e64;&#x7bc4;&#x672c;&#x4f86;&#x64f7;&#x53d6;&#x4e8b;&#x4ef6;&#x3002;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x5206;&#x6790;&#x64f7;&#x53d6;&#x7684;&#x4e8b;&#x4ef6;&#x8cc7;&#x6599;&#x3002;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x91cd;&#x65b0;&#x57f7;&#x884c;&#x64f7;&#x53d6;&#x7684;&#x4e8b;&#x4ef6;&#x8cc7;&#x6599;&#x3002;&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul></li>
+</ul>
+</li>
+<li><span id="show1_16" class="foldclosed" onClick="show_folder('1_16')" style="POSITION: absolute">+</span> <span id="hide1_16" class="foldopened" onClick="hide_folder('1_16')">-</span>
+performance Killers
+<ul id="fold1_16" style="POSITION: relative; VISIBILITY: visible;"><li>Poor indexing
+
+</li>
+<li>Inaccurate statistics
+
+</li>
+<li>Poor query design
+
+</li>
+<li>Poor execution plans, usually caused by bad parameter sniffing
+
+</li>
+<li>Excessive blocking and deadlocks
+
+</li>
+<li>Non-set-based operations, usually T-SQL cursors
+
+</li>
+<li>Poor database design
+
+</li>
+<li>Excessive fragmentation
+
+</li>
+<li>Nonreusable execution plans
+
+</li>
+<li>Frequent recompilation of queries
+
+</li>
+<li>Improper use of cursors
+
+</li>
+<li>Improper configuration of the database log
+
+</li>
+<li>Excessive use or improper configuration of tempdb
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Policy Based Management (24) 
+<p><span id="show1_17" class="foldclosed" onClick="show_folder('1_17')" style="POSITION: absolute">+</span> <span id="hide1_17" class="foldopened" onClick="hide_folder('1_17')">-</span>
+PowerShell (34) 
+<ul id="fold1_17" style="POSITION: relative; VISIBILITY: visible;"><li>SQLserver
+<ul><li>SQL
+
+</li>
+<li>SQLPolicy
+
+</li>
+<li>SQLregistration
+
+</li>
+<li>DataCollection
+
+</li>
+<li>Xevent
+
+</li>
+<li>Utility
+
+</li>
+<li>DAC
+
+</li>
+<li>SQLAS
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>Profiler and Trace (9) 
+<p>Recovery Models (3) 
+<p><span style="color: #ff0000;">Replication (32) </span>
+<p>Resource Governor (2) 
+<p>Restore (19) 
+<p><span id="show1_18" class="foldclosed" onClick="show_folder('1_18')" style="POSITION: absolute">+</span> <span id="hide1_18" class="foldopened" onClick="hide_folder('1_18')">-</span>
+Security (103) 
+<ul id="fold1_18" style="POSITION: relative; VISIBILITY: visible;"><li>Permissions (Database Engine)
+<ul><li>control
+
+</li>
+<li>alter
+
+</li>
+<li>&nbsp;
+
+</li>
+
+</ul>
+</li>
+
+</ul><p>SQL Azure (8) 
+<p>SQL Server Agent (42) 
+<p>SQL Server Configurations (48) 
+<p>SQL Server Management Studio (58) 
+<p>StreamInsight (2) 
+<p>Surface Area Configuration Manager (4) 
+<p>System Databases (6) 
+&#xd;&#xa;    <p>&#xd;&#xa;      Tools (18)&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Upgrades and Migrations (40)&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Virtual Machines VM (10)&#xa0;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Windows Internal Database (1)&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li><span id="show1_19" class="foldclosed" onClick="show_folder('1_19')" style="POSITION: absolute">+</span> <span id="hide1_19" class="foldopened" onClick="hide_folder('1_19')">-</span>
+Sizing
+<ul id="fold1_19" style="POSITION: relative; VISIBILITY: visible;"><li>&#38928;&#28204;&#25104;&#38263;&#29575;
+<ul><li>&#32218;&#24615;&#25104;&#38263; &#65288;Linear growth&#65289;
+
+</li>
+<li>&#24190;&#20309;&#25104;&#38263; 
+
+</li>
+
+</ul>
+</li>
+<li>&#36000;&#36617;&#28204;&#35430;
+<ul><li>&#25928;&#33021;&#26354;&#32218;&#30340;&#36681;&#25240;&#40670;
+
+</li>
+<li>&#25928;&#33021;&#33256;&#30028;&#20540;
+
+</li>
+<li>&#25928;&#33021;&#26354;&#32218;
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_19_1" class="foldclosed" onClick="show_folder('1_19_1')" style="POSITION: absolute">+</span> <span id="hide1_19_1" class="foldopened" onClick="hide_folder('1_19_1')">-</span>
+&#24037;&#20316;&#36000;&#36617;&#20998;&#26512;
+<ul id="fold1_19_1" style="POSITION: relative; VISIBILITY: visible;"><li>&#xd;&#xa;    <p>&#xd;&#xa;      &#x8cc7;&#x6599;&#x8655;&#x7406;&#x91cf;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      CPU&#x4f7f;&#x7528;&#x7387;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x540c;&#x6642;&#x9593;&#x67e5;&#x8a62;&#x7684;&#x8f38;&#x51fa;&#x7d50;&#x679c;&#x5927;&#x5c0f;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x540c;&#x6642;&#x9593;&#x4e0a;&#x7dda;&#x7684;&#x4f7f;&#x7528;&#x8005;&#x6578;&#x91cf;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x8cc7;&#x6599;&#x5eab;&#x5927;&#x5c0f;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      &#x983b;&#x5bec;&#x9700;&#x6c42;&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li>example
+<ul><li><span id="show1_19_2" class="foldclosed" onClick="show_folder('1_19_2')" style="POSITION: absolute">+</span> <span id="hide1_19_2" class="foldopened" onClick="hide_folder('1_19_2')">-</span>
+sharepoint 
+<ul id="fold1_19_2" style="POSITION: relative; VISIBILITY: visible;"><li>step1:Model
+<ul><li><span id="show1_19_2_1" class="foldclosed" onClick="show_folder('1_19_2_1')" style="POSITION: absolute">+</span> <span id="hide1_19_2_1" class="foldopened" onClick="hide_folder('1_19_2_1')">-</span>
+workload
+<ul id="fold1_19_2_1" style="POSITION: relative; VISIBILITY: visible;"><li>Average daily RPS 
+
+</li>
+<li>Average RPS at peak time 
+
+</li>
+<li>Total number of unique users per day 
+
+</li>
+<li>Average daily concurrent users 
+
+</li>
+<li>Peak concurrent users at peak time 
+
+</li>
+<li>Total number of requests per day 
+
+</li>
+<li>Expected workload distribution
+
+</li>
+<li>Web Browser - Search Crawl 
+
+</li>
+<li>Web Browser - General Collaboration Interaction
+
+</li>
+<li>Web Browser - Social Interaction 
+
+</li>
+<li>Web Browser - General Interaction 
+
+</li>
+<li>Web Browser - Office Web Apps
+
+</li>
+<li>Office Clients 
+
+</li>
+<li><span style="font-family: SansSerif, sans-serif; ">OneNote Client</span>
+
+</li>
+<li>SharePoint Workspace 
+
+</li>
+<li>Outlook RSS Sync 
+
+</li>
+<li>Outlook Social Connecto
+
+</li>
+<li>Other interactions(Custom Applications/Web services) &nbsp;
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_19_2_2" class="foldclosed" onClick="show_folder('1_19_2_2')" style="POSITION: absolute">+</span> <span id="hide1_19_2_2" class="foldopened" onClick="hide_folder('1_19_2_2')">-</span>
+production workload
+<ul id="fold1_19_2_2" style="POSITION: relative; VISIBILITY: visible;"><li>&#35672;&#21029;&#20351;&#29992;&#32773;&#20114;&#21205;
+
+</li>
+<li>&#35672;&#21029;&#22914;&#25628;&#23563;&#32047;&#21152;&#32232;&#30446;&#12289;&#27599;&#26085;&#20633;&#20221;&#12289;&#35373;&#23450;&#27284;&#21516;&#27493;&#34389;&#29702;&#12289;&#35336;&#26178;&#22120;&#24037;&#20316;&#12289;Web Analytics &#34389;&#29702;&#12289;&#35352;&#37636;&#35336;&#26178;&#22120;&#24037;&#20316;&#31561;&#31561;&#30340;&#31995;&#32113;&#20316;&#26989;&#12290;
+
+</li>
+<li>&#35413;&#20272;&#38928;&#26399;&#23559;&#20351;&#29992;&#27599;&#38917;&#21151;&#33021;&#30340;&#27599;&#26085;&#20351;&#29992;&#32773;&#32317;&#25976;&#65292;&#25512;&#31639;&#35413;&#20272;&#30340;&#20006;&#34892;&#20351;&#29992;&#32773;&#33287;&#27010;&#30053;&#30340;&#27599;&#31186;&#35201;&#27714;&#25976;&#30446;
+
+</li>
+
+</ul>
+</li>
+<li>								&#20998;&#26512; SharePoint Server 2010 IIS &#35352;&#37636;&#27284;&nbsp;
+
+</li>
+<li><span id="show1_19_2_3" class="foldclosed" onClick="show_folder('1_19_2_3')" style="POSITION: absolute">+</span> <span id="hide1_19_2_3" class="foldopened" onClick="hide_folder('1_19_2_3')">-</span>
+Dataset
+<ul id="fold1_19_2_3" style="POSITION: relative; VISIBILITY: visible;"><li><p>DB size (in GB) &nbsp;
+<p>Number of Content DBs &nbsp;
+<p>Number of site collections &nbsp;
+<p>Number of web apps &nbsp;
+<p>Number of sites &nbsp;Search index size (# of items) &nbsp;
+&#xd;&#xa;    <p>&#xd;&#xa;      Number of docs&#xa0;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Number of lists&#xa0;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Average size of sites&#xa0;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Largest site size&#xa0;&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      Number of user profiles&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+<p>Service applications data characteristics 
+<p>Total size of the Search index 
+<p>The profile database total size based on the number of user in the profile store
+<p> The social database total size based on the expected number of tags, colleagues and activities 
+&#xd;&#xa;    <p>&#xd;&#xa;      The metadata store size&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      The size of the usage database&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p>&#xd;&#xa;      The size of the Web Analytics data base&#xa0;&#xd;&#xa;    </p>&#xd;&#xa;  
+</li>
+</ul>
+</li>
+<li><span id="show1_19_2_4" class="foldclosed" onClick="show_folder('1_19_2_4')" style="POSITION: absolute">+</span> <span id="hide1_19_2_4" class="foldopened" onClick="hide_folder('1_19_2_4')">-</span>
+Performance and Reliability Targets
+<ul id="fold1_19_2_4" style="POSITION: relative; VISIBILITY: visible;"><li>Server availability
+
+</li>
+<li>Server responsiveness 
+
+</li>
+<li>Server spikiness
+
+</li>
+<li>System resource utilization
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>step2:Design
+<ul><li>Determine your starting point architecture 
+
+</li>
+<li>Case Studies
+
+</li>
+<li>Select your hardware 
+<ul><li>Choosing Processors 
+
+</li>
+<li>Choosing Memory 
+
+</li>
+<li>Choosing Networks 
+
+</li>
+<li>Choosing Disks and Storage 
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>step3: Piolt, Test and Optimize
+<ul><li>&#28204;&#35430;
+<ul><li>&#160;&#24314;&#31435;&#28204;&#35430;&#21450;&#24037;&#20855;
+
+</li>
+
+</ul>
+</li>
+<li>&#37096;&#32626;&#35430;&#39511;&#29872;&#22659;
+
+</li>
+<li>&#26368;&#20339;&#21270;
+
+</li>
+
+</ul>
+</li>
+<li>step4: Deploy
+
+</li>
+<li>step5: Monitor and maintain
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_20" class="foldclosed" onClick="show_folder('1_20')" style="POSITION: absolute">+</span> <span id="hide1_20" class="foldopened" onClick="hide_folder('1_20')">-</span>
+Books Online for SQL Server 2014
+<ul id="fold1_20" style="POSITION: relative; VISIBILITY: visible;"><li>Getting Started(SQL Server 2014)
+
+</li>
+<li>Database engine
+<ul><li>What's New
+
+</li>
+<li>Backward compatibility
+
+</li>
+<li>Tools Backward &nbsp;Compatibilitity
+
+</li>
+<li><span id="show1_20_1" class="foldclosed" onClick="show_folder('1_20_1')" style="POSITION: absolute">+</span> <span id="hide1_20_1" class="foldopened" onClick="hide_folder('1_20_1')">-</span>
+Database Feature and Tasks
+<ul id="fold1_20_1" style="POSITION: relative; VISIBILITY: visible;"><li>Database Engine instances
+<ul><li>configure Database Engine instances
+
+</li>
+<li>collation and Unicode Support
+
+</li>
+<li>Linked Servers
+
+</li>
+<li>Logon Triggers
+
+</li>
+<li>Manage the Database engine Services
+
+</li>
+<li>Server Network Configuration
+
+</li>
+<li>client Network Configuration
+
+</li>
+<li>Database Engine Scripting
+
+</li>
+<li>Maintenace Plans
+
+</li>
+<li>Resource Governor
+
+</li>
+<li>Database Mail
+
+</li>
+<li>Extended Event
+<ul><li>Benefits 
+
+</li>
+<li>concepts
+
+</li>
+<li>architecture
+
+</li>
+<li>Tasks
+
+</li>
+<li>DMV
+
+</li>
+<li>Catalog views
+
+</li>
+
+</ul>
+</li>
+<li>SQL Trace
+
+</li>
+<li>SQL Server Profiler
+
+</li>
+<li>Track Data Changes
+
+</li>
+<li>Log File Viewer
+
+</li>
+<li>Database Engine Tuning Advisor
+
+</li>
+<li>Eiagnostic Connection for Database Administrators
+
+</li>
+<li>Cloud Adapter for SQL server
+
+</li>
+<li>SQL Server 2014 Express LocalDB
+
+</li>
+<li>Remote Server
+
+</li>
+<li>SQL server Monitor Overview
+
+</li>
+<li>Buffer Pool Exetension
+
+</li>
+
+</ul>
+</li>
+<li>Databases features
+
+</li>
+<li><span id="show1_20_1_1" class="foldclosed" onClick="show_folder('1_20_1_1')" style="POSITION: absolute">+</span> <span id="hide1_20_1_1" class="foldopened" onClick="hide_folder('1_20_1_1')">-</span>
+Database engine Cross-instance feature
+<ul id="fold1_20_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>SQL server management Studio
+
+</li>
+<li>SQL Server Utility Features and Tasks
+
+</li>
+<li>Administer server by using Policy-Based Management
+
+</li>
+<li>Register Servers
+
+</li>
+<li>SQL Server Distributed Replay
+
+</li>
+<li>Data Collection
+<ul><li>Manage Data Collection
+
+</li>
+<li>System Data Set collection set Reports
+
+</li>
+<li>Management Data WareHouse
+
+</li>
+<li>Data collector Security
+
+</li>
+
+</ul>
+</li>
+<li>Monitor Resource Usage(System Monitor)
+
+</li>
+<li>Administer Multiple &nbsp;Server Using Central Management Servers
+
+</li>
+<li>SQL Server Configuration Manager
+
+</li>
+<li>Activity Monitor
+
+</li>
+
+</ul>
+</li>
+<li>High Availability solutions
+
+</li>
+<li>Security and Protection
+
+</li>
+
+</ul>
+</li>
+<li>Technical Reference
+
+</li>
+<li>TSQL Reference
+
+</li>
+<li>Xquery Reference
+
+</li>
+
+</ul>
+</li>
+<li>Analysis Services
+
+</li>
+<li>Integration Services
+
+</li>
+<li>Data Quality Services
+
+</li>
+<li>Replication 
+
+</li>
+<li>Reporting Services
+
+</li>
+<li>Master Data Services
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21" class="foldclosed" onClick="show_folder('1_21')" style="POSITION: absolute">+</span> <span id="hide1_21" class="foldopened" onClick="hide_folder('1_21')">-</span>
+SQL Server 2008 R2 Books Online
+<ul id="fold1_21" style="POSITION: relative; VISIBILITY: visible;"><li>Getting Started
+
+</li>
+<li>Database Engine
+<ul><li>Prodcut Evaluation
+
+</li>
+<li>Getting Started
+
+</li>
+<li>Planning and Architecture
+
+</li>
+<li>Development
+
+</li>
+<li>Deployment
+
+</li>
+<li><span id="show1_21_1" class="foldclosed" onClick="show_folder('1_21_1')" style="POSITION: absolute">+</span> <span id="hide1_21_1" class="foldopened" onClick="hide_folder('1_21_1')">-</span>
+Operations
+<ul id="fold1_21_1" style="POSITION: relative; VISIBILITY: visible;"><li>Administration
+
+</li>
+<li>High Availability
+
+</li>
+<li>Monitoring
+<ul><li>Monitoring Instance of SQL Server in the SQL Server Utility
+
+</li>
+<li>Event Notification 
+
+</li>
+<li>Log File Viewer
+
+</li>
+<li>Monitoring Resource Usage
+
+</li>
+<li>Monitoring Events
+
+</li>
+<li><span id="show1_21_1_1" class="foldclosed" onClick="show_folder('1_21_1_1')" style="POSITION: absolute">+</span> <span id="hide1_21_1_1" class="foldopened" onClick="hide_folder('1_21_1_1')">-</span>
+Data Collection
+<ul id="fold1_21_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Intrducting the Data Collector
+
+</li>
+<li>Getting started with the Data collector
+
+</li>
+<li>Data Collection Terminology
+
+</li>
+<li>Data Collector Architecture and Processing
+
+</li>
+<li><span id="show1_21_1_1_1" class="foldclosed" onClick="show_folder('1_21_1_1_1')" style="POSITION: absolute">+</span> <span id="hide1_21_1_1_1" class="foldopened" onClick="hide_folder('1_21_1_1_1')">-</span>
+System Data Collection Sets
+<ul id="fold1_21_1_1_1" style="POSITION: relative; VISIBILITY: visible;"><li>Disk Usage Collection Set
+<ul><li>Disk Usage - Data Files
+
+</li>
+<li>Disk Usage - Log Files
+
+</li>
+
+</ul>
+</li>
+<li>Server Activity Collection Set
+<ul><li>Server Activity - DMV Snapshots
+<ul><li>snapshots.os_wait_stats
+
+</li>
+<li>snapshots.os_latch_stats
+
+</li>
+<li>snapshots.sql_process_and_system_memory
+
+</li>
+<li>snapshots.os_memory_nodes
+
+</li>
+<li>snapshots.os_memory_clerks
+
+</li>
+<li>snapshots.os_schedulers
+
+</li>
+<li>snapshots.io_virtual_file_stats
+
+</li>
+
+</ul>
+</li>
+<li>Server Activity &#8211;&nbsp;Performance Counters
+
+</li>
+
+</ul>
+</li>
+<li>Query Statistic Collection 
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_21_1_1_2" class="foldclosed" onClick="show_folder('1_21_1_1_2')" style="POSITION: absolute">+</span> <span id="hide1_21_1_1_2" class="foldopened" onClick="hide_folder('1_21_1_1_2')">-</span>
+Utility information Data Collection
+<ul id="fold1_21_1_1_2" style="POSITION: relative; VISIBILITY: visible;"><li>sysutility_dac_info_internal
+
+</li>
+<li>sysutility_smo_properties_internal
+
+</li>
+<li>sysutility_cpu_affinity_value_internal
+
+</li>
+<li>sysutility_cpu_memory_related_info_internal
+
+</li>
+<li>sysutility_database_file_info_internal
+
+</li>
+<li>Utility Information - Utility Performance Counters Items
+
+</li>
+<li>Utility Information - Utility Performance Counters Items1
+
+</li>
+<li>sysutility_volumes_info_internal
+
+</li>
+
+</ul>
+</li>
+<li>Collector Types
+
+</li>
+<li>Data Collector Security
+
+</li>
+<li>Data Collector Logging
+
+</li>
+<li>Data Collector Error Handling
+
+</li>
+<li>The Managment Data WareHouse
+
+</li>
+<li>How to Topics
+<ul><li>Using SSMS
+
+</li>
+<li><span id="show1_21_1_1_3" class="foldclosed" onClick="show_folder('1_21_1_1_3')" style="POSITION: absolute">+</span> <span id="hide1_21_1_1_3" class="foldopened" onClick="hide_folder('1_21_1_1_3')">-</span>
+Using TSQl
+<ul id="fold1_21_1_1_3" style="POSITION: relative; VISIBILITY: visible;"><li><span id="show1_21_1_1_3_1" class="foldclosed" onClick="show_folder('1_21_1_1_3_1')" style="POSITION: absolute">+</span> <span id="hide1_21_1_1_3_1" class="foldopened" onClick="hide_folder('1_21_1_1_3_1')">-</span>
+Stored Procedures and Views
+<ul id="fold1_21_1_1_3_1" style="POSITION: relative; VISIBILITY: visible;"><li>Data collector
+<ul><li>sp_syscollector_enable_collector
+
+</li>
+<li>sp_syscollector_disable_collector
+
+</li>
+
+</ul>
+</li>
+<li>Collection Sets
+<ul><li>sp_syscollector_run_Collection_set
+
+</li>
+<li>sp_syscollector_start_Collection_set
+
+</li>
+<li>sp_syscollector_Stop_Collection_set
+
+</li>
+<li>sp_syscollector_create_Collection_set
+
+</li>
+<li>sp_syscollector_Delete_Collection_set
+
+</li>
+<li>sp_syscollector_update_Collection_set
+
+</li>
+<li>sp_syscollector_upload_Collection_set
+
+</li>
+
+</ul>
+</li>
+<li> collection items
+<ul><li>sp_syscollector_create_collection_item
+
+</li>
+<li>sp_syscollector_delete_collection_item
+
+</li>
+<li>sp_syscollector_update_collection_item
+
+</li>
+
+</ul>
+</li>
+<li>Collector types
+<ul><li>sp_syscollector_create_collector_type
+
+</li>
+<li>sp_syscollector_update_collector_type
+
+</li>
+<li>sp_syscollector_delete_collector_type
+
+</li>
+
+</ul>
+</li>
+<li>Getting configuration information
+<ul><li>syscollector_config_store 
+
+</li>
+<li>syscollector_collection_items 
+
+</li>
+<li>syscollector_collection_sets 
+
+</li>
+<li>syscollector_collector_types 
+
+</li>
+<li>syscollector_execution_log
+
+</li>
+<li>syscollector_execution_stats
+
+</li>
+<li>syscollector_execution_log_full
+
+</li>
+
+</ul>
+</li>
+<li>Configuring access to the management data warehouse
+<ul><li>sp_syscollector_set_warehouse_database_name 
+
+</li>
+<li>sp_syscollector_set_warehouse_instance_name 
+
+</li>
+
+</ul>
+</li>
+<li>Configuring the management data warehouse
+<ul><li>core.sp_create_snapshot
+
+</li>
+<li>core.sp_update_data_source
+
+</li>
+<li>core.sp_add_collector_type
+
+</li>
+<li>core.sp_remove_collector_type
+
+</li>
+<li>core.sp_purge_data
+
+</li>
+
+</ul>
+</li>
+<li>Working with upload packages
+<ul><li>sp_syscollector_set_cache_window
+
+</li>
+<li>sp_syscollector_set_cache_directory 
+
+</li>
+
+</ul>
+</li>
+<li>Working with the data collection execution log
+<ul><li>sp_syscollector_delete_execution_log_tree
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>Functions
+<ul><li>fn_syscollector_get_execution_details 
+
+</li>
+<li>fn_syscollector_get_execution_stats
+
+</li>
+<li>snapshots.fn_trace_gettable 
+
+</li>
+
+</ul>
+</li>
+<li>configure Data collection Parameters
+
+</li>
+<li>Create a set with TSQL
+
+</li>
+<li>add a collection item to a collection set
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>SQL Server Extended Events
+<ul><li>Introducing
+
+</li>
+<li>Concepts
+
+</li>
+<li>Using SQL Server extended events
+
+</li>
+<li>How-to Topics
+<ul><li>Determine Which Queries Are Holding Locks
+
+</li>
+<li>Find the Object &nbsp;That have Most Locks Taken on Them
+
+</li>
+<li>configure Parameter for Add Target Argument
+
+</li>
+<li>Get the Fields for All Events
+
+</li>
+<li>Monitor system activity using Extened Event
+
+</li>
+<li>View the Event for Register package
+
+</li>
+<li>View the Extened Events Target for Register Package
+
+</li>
+
+</ul>
+</li>
+<li>Create , Alter ,Drop event session, create 
+
+</li>
+<li>Catalog views
+
+</li>
+<li>DMV
+
+</li>
+
+</ul>
+</li>
+<li>Monitoring Data-tier Applications
+
+</li>
+
+</ul>
+</li>
+<li>Performance
+
+</li>
+
+</ul>
+</li>
+<li>Security adn Protection
+
+</li>
+<li>Trobuleshooting
+
+</li>
+<li>Technical Reference
+
+</li>
+
+</ul>
+</li>
+<li>Analysis Services-Mulitdimensional Data
+
+</li>
+<li>Analysis Services-Data Mining
+
+</li>
+<li>Integration Services
+
+</li>
+<li>Replication
+
+</li>
+<li>Reporting Services
+
+</li>
+<li>Services Broker
+
+</li>
+<li>Master Data Services
+
+</li>
+<li>SharePoint Integration
+
+</li>
+<li>SQL Programming Reference
+
+</li>
+<li>SQL Server Tutorials
+
+</li>
+
+</ul>
+</li>
+<li><span id="show1_22" class="foldclosed" onClick="show_folder('1_22')" style="POSITION: absolute">+</span> <span id="hide1_22" class="foldopened" onClick="hide_folder('1_22')">-</span>
+replication SP
+<ul id="fold1_22" style="POSITION: relative; VISIBILITY: visible;"><li>subscriber
+<ul><li>sp_dropsubscriber
+
+</li>
+
+</ul>
+</li>
+<li>subscription 
+<ul><li>sp_dropsubscription 
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li><span id="show1_23" class="foldclosed" onClick="show_folder('1_23')" style="POSITION: absolute">+</span> <span id="hide1_23" class="foldopened" onClick="hide_folder('1_23')">-</span>
+backup &nbsp;strategry
+<ul id="fold1_23" style="POSITION: relative; VISIBILITY: visible;"><li>requirement 
+<ul><li>RTO (Recovery Time Objective ) : &lt; 1 hrs
+
+</li>
+<li>RPO (Recovery Point Objective)
+
+</li>
+
+</ul>
+</li>
+<li>Backup Naming &#21629;&#21517;&#35215;&#26684;
+
+</li>
+<li>Team member&#36000;&#36012;&#22296;&#38538;
+<ul><li>Service/Role/Function &#35282;&#33394;
+
+</li>
+<li>Responsibility &#36012;&#20219;
+
+</li>
+<li>Dependencies &#30456;&#20381;
+
+</li>
+<li>Expected Response Time &#21453;&#25033;&#26178;&#38291;
+
+</li>
+
+</ul>
+</li>
+<li>Security considerations for backup &amp; restore &#23433;&#20840;
+<ul><li>&#23384;&#21462;&#35352;&#37636;
+
+</li>
+<li>&#21152;&#23494;
+
+</li>
+
+</ul>
+</li>
+<li>Backup media(Devices)
+<ul><li>Disk
+
+</li>
+<li>Tape
+
+</li>
+<li>CDDVD
+
+</li>
+<li>NAS
+
+</li>
+<li>Cloud
+
+</li>
+
+</ul>
+</li>
+<li>Backup Target (source) &#20358;&#28304;
+<ul><li>IP Hostname 		
+
+</li>
+<li>Account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</li>
+<li>System databases &#12288;SQL&#31995;&#32113;DB	
+
+</li>
+<li>User Database &nbsp;&#20351;&#29992;&#32773;	
+
+</li>
+<li>Object level : database ,file , FileGroup &nbsp;
+
+</li>
+<li>Sentinel program (make Pilot data)&#12288;&#38283;&#30332;&#39511;&#35657;&#31243;&#24335;
+
+</li>
+
+</ul>
+</li>
+<li>Restore verification&#12288;&#36996;&#21407;&#39511;&#35657;
+<ul><li>IP hostname 		
+
+</li>
+<li>Path &nbsp;&#23384;&#21462;&#36335;&#24465;	
+
+</li>
+<li>Operation (confirm Pilot data) &nbsp;
+
+</li>
+<li>Verification books&#12288;&#39511;&#35657;&#25991;&#20214;
+
+</li>
+
+</ul>
+</li>
+<li>Backup factors &#20633;&#20221;&#32771;&#24942;&#22240;&#32032;
+<ul><li><p>recovery model
+<ul><li>Full
+
+</li>
+<li>differential backup
+
+</li>
+<li>Diferential partial backups
+
+</li>
+<li>Transcation log backups
+
+</li>
+
+</ul>&#xd;&#xa;    <p style="margin-bottom: 0in; font-family: Consolas; margin-right: 0in; margin-left: .375in; margin-top: 0in; font-size: 11.0pt" lang="en-US">&#xd;&#xa;      Object: FileGroups&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p style="margin-bottom: 0in; font-family: Consolas; margin-right: 0in; margin-left: 0in; margin-top: 0in; font-size: 11.0pt" lang="en-US">&#xd;&#xa;      Scheduling job&#xd;&#xa;    </p>&#xd;&#xa;  
+&#xd;&#xa;    <p style="margin-bottom: 0in; font-family: Consolas; margin-right: 0in; margin-left: 0in; margin-top: 0in; font-size: 11.0pt" lang="en-US">&#xd;&#xa;      compression&#xd;&#xa;    </p>&#xd;&#xa;  
+<p>Baseline performance &#25928;&#33021;
+</li>
+</ul>
+</li>
+<li>Achieve Data retention 
+<ul><li>For law ( 5 years
+
+</li>
+<li>Location (DR Site)
+
+</li>
+<li>photo scanner file
+
+</li>
+<li>Context (physical pages)
+
+</li>
+
+</ul>
+</li>
+<li>Monitor
+<ul><li>automatic
+
+</li>
+<li>record table
+
+</li>
+
+</ul>
+</li>
+<li>Manual 
+<ul><li>Documents checklist : backup &amp; &nbsp;restore SOP
+<ul><li>Version
+
+</li>
+<li>Date
+
+</li>
+<li>Author
+
+</li>
+<li>Change Summary 
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul><SCRIPT type="text/javascript">
+fold_document();
+</SCRIPT>
+</body>
+</html>
