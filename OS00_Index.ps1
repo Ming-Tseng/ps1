@@ -1,4 +1,18 @@
-﻿<#OS00_Indexfilelocation : C:\Users\User\OneDrive\download\PS1\OS00_Index.ps1\\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS00_Index.ps1\\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\OS00_Index.ps1CreateDate: APR.30.2014LastDate : AUG.11.2015Author :Ming Tseng  ,a0921887912@gmail.comremark 
+﻿<#
+2023+
+OS00_Index
+filelocation : 
+C:\Users\User\OneDrive\download\PS1\OS00_Index.ps1
+\\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS00_Index.ps1
+\\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1
+\\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\OS00_Index.ps1
+
+CreateDate: APR.30.2014
+LastDate : AUG.11.2015
+Author :Ming Tseng  ,a0921887912@gmail.com
+remark 
+
+
 email backup
 
 
@@ -18,7 +32,11 @@ foreach ($ps1f in $ps1fS)
     -Subject "ps1source  -- $getdagte      --        $ps1fname       --   $ps1flastwritetime -- $ps1length " `
     -Body "  ps1source from:me $ps1fname   " 
 }
-week backup mingbackup.ps1
+
+
+week backup 
+mingbackup.ps1
+
 $str=get-date -Format yyyyMMdd
 $f33mydata='\\172.16.220.33\f$\mydataII\pS1_'+$str
 start-sleep 5
@@ -27,9 +45,18 @@ Copy-Item -Path C:\onenote_20150528\ -Destination C:\Users\administrator.CSD\Sky
 
 Copy-Item -Path C:\onenote_20150528\ -Destination \\172.16.220.33\f$\mydataII –Recurse -Force
 
-Copy-Item -Path C:\Users\administrator.CSD\SkyDrive\download\PS1 -Destination $f33mydata –Recurse -Force 
-edit at IBM t61  Aug.06.2015 #>________________________________________________________________________________________________________________________________________
-pwd: p@ssw0rd  ; pass@word1 ; p@sswords(1)2012R2Tmp            172.16.220.216  192.168.112.115    <WIN-2S026UBRQFO> (4G,2logicCore)  tempcsd\administrator  p*******s s*****@***4  (2)2013BI  2016BI	    172.16.220.34	192.168.112.123            (windows2008R2 ; 4G; 1logicCore; C:100G) 
+Copy-Item -Path C:\Users\administrator.CSD\SkyDrive\download\PS1 -Destination $f33mydata –Recurse -Force
+ 
+edit at IBM t61  Aug.06.2015 
+#>
+
+get-date
+ii  c:\temp
+________________________________________________________________________________________________________________________________________
+pwd: p@ssw0rd  ; pass@word1 ; p@sswords
+
+(1)2012R2Tmp            172.16.220.216  192.168.112.115    <WIN-2S026UBRQFO> (4G,2logicCore)  tempcsd\administrator  p*******s s*****@***4  
+(2)2013BI  2016BI	    172.16.220.34	192.168.112.123            (windows2008R2 ; 4G; 1logicCore; C:100G) 
 (3)PMD.SYSCOM.COM.TW  	172.16.201.147	192.168.112.55     <PMD>   (windows2008R2 ; 4G; 1logicCore; C:100G) 
 (4)SP2013	            172.16.220.29	192.168.112.124             (8G,2logicCore ; C:100G,H:200G)
 (5)SP2013WFE	        (172.16.220.193)192.168.112.127             (8G,1logicCore ; C:100G)
@@ -41,14 +68,70 @@ FC.CSD.SYSCOM          172.16.220.194   member: SP2013,SQL2014X
 PMOCSD.syscom.com
 
 W2K8R2-2013	        10.1.51.52	    NULL
-(1)2012R2Tmp         216   115 adobe,AD, sharepoint2013,SQL2014 ,picasa,oralce,OneDriveBusiness,XMLNotepad   (2)2013BI  2016BI	 34	   123   AD  
+
+(1)2012R2Tmp         216   115 adobe,AD, sharepoint2013,SQL2014 ,picasa,oralce,OneDriveBusiness,XMLNotepad   
+(2)2013BI  2016BI	 34	   123   AD  
 (3)PMD.SYSCOM.COM.TW 147 <PMD>     
 (4)SP2013	         29	   124   SQL2014,Office2013plus,OneDrive, onenote, chrome,line, adobe,rar,ultraEdit
 (5)SP2013WFE	           127            
 (6)SQL2012X   SQL2014X 61  129            
 (7)Win2k3SQL2k             128
 (8)XP(用戶端)               130
-(9)X專案管理系統 PMD2016  33  144  AD,office2016MSDN;Chrome;adobe;SQL2014;SSDT2013,visual2015,OneDriveforPeople;sharepoint2013;FreeMindsnapshot : 20160309 before Sharepoint2013onedrivePOC(10)New 專案管理系統 PMD2016  33  144  AD, sql2014ENT, Sharepoint20131.mingcolumnDataType2.filelist for  cloud,familyphoto, microsoft, mydata, mydataII(onenote,ps1), Proposal,RFP,software, software2015, worklog3.SQL_inventory  create ,backup 4.third Path backup to  w2k8r2-2013    telnet 10.1.51.121 3389    \\10.1.51.121\y$ping w2k8r2-2013 ping 10.1.51.121  Update-Helpget-help *servicehelp Get-Servicehelp about*  # help about_for  help about_ifhelp get-service –onlinePrinter 10.1.51.201  HP 9040 PCL6('AA01_General'              ,N'Android',N'ardiuno',Null)('AA02_code'                 ,N'basic',N'xml',Null)('AA03_anUse'                ,N'各式應用',N'ebook chapter',N'imageView',N'checkbox',N'checkbox')('AA04_anComponent'          ,N'RadioButton',N'checkbox',N'imageView',N'checkbox',N'checkbox')('AA05_arSensorControl '      ,N'RadioButton',N'checkbox',N'imageView',N'checkbox',N'checkbox')('AA06_arModule'             ,N'RadioButton',N'checkbox',N'imageView',N'checkbox',N'checkbox')('AA07_arSyntax'             ,N'字串設定語法',N'checkbox',N'imageView',N'checkbox',N'checkbox')arModule('EX01_CIB'                 ,N'CIB',N'SSIS',Null)('EX02_M3'                  ,N'MVDIS',N'Index',Null)('EX03_DGPA'                ,N'DGPA',N'replication ','mirroring')('EX04_KMUH'                ,N'KUMU',N'alwayson ',Null)('EX05_SYSCOM'              ,N'mingbackup',N'mingbackupfile ',mingbackupDB)('ex06_TPEx'                ,N'cluadmin',N'SQL2014 ',  )('ex07_MOFA'                ,N'cluadmin',N'SQL2014 ', )('ex08_TPEx_sharepoint2007'   ,N'cluadmin',N'SQL2014 ', )('ex08_01_TPEx_sharepoint2007' ,N'cluadmin',N'SQL2014 ',   )('ex09_CHTperformance'         ,N'CHT',N'sQL2008 ',   )('EX10_CHTD'                ,N'CHT',N'sQL2008 ',   )('EX11_HwaTaiBank'          ,N'CHT',N'sQL2008 ',   )('EX12_TsengFamily'         ,N'CHT',N'sQL2008 ',   )('EX13_KMUHDR'              ,N'CHT',N'sQL2008 ',   )('EX14_TWSELOGPerf'         ,N'TWSE',N'sQL2008 ', '\WorkLog\TWSE-RecAP'  )('EX15_TPDoITOneDrive'      ,N'TP',N' ', onedrive for business 'office 365 '  )('EX16_TPTAO'               ,N'臺北市交通事件裁決所',N' ', Taipei city Traffic Adjudication Office  )('EX17_TPTAO_everyQuarterly',N'臺北市交通事件裁決所',N' ', Taipei city Traffic Adjudication Office  )('EX18_ACERSharePoint'      ,N'SharePoint backup restore',N' ', Taipei city Traffic Adjudication Office  )('OS00_Index'                ,N'Index',N'Index',Null)
+(9)X專案管理系統 PMD2016  33  144  AD,office2016MSDN;Chrome;adobe;SQL2014;SSDT2013,visual2015,OneDriveforPeople;sharepoint2013;FreeMind
+snapshot : 20160309 before Sharepoint2013onedrivePOC
+(10)New 專案管理系統 PMD2016  33  144  AD, sql2014ENT, Sharepoint2013
+
+
+1.mingcolumnDataType
+2.filelist for  cloud,familyphoto, microsoft, mydata, mydataII(onenote,ps1), Proposal,RFP,software, software2015, worklog
+3.SQL_inventory  create ,backup 
+4.third Path backup to  w2k8r2-2013    telnet 10.1.51.121 3389    \\10.1.51.121\y$
+ping w2k8r2-2013 
+ping 10.1.51.121  
+
+
+Update-Help
+get-help *service
+help Get-Service
+help about*  # help about_for  help about_if
+help get-service –online
+
+Printer 10.1.51.201  HP 9040 PCL6
+
+
+('AA01_General'              ,N'Android',N'ardiuno',Null)
+('AA02_code'                 ,N'basic',N'xml',Null)
+('AA03_anUse'                ,N'各式應用',N'ebook chapter',N'imageView',N'checkbox',N'checkbox')
+('AA04_anComponent'          ,N'RadioButton',N'checkbox',N'imageView',N'checkbox',N'checkbox')
+
+('AA05_arSensorControl '      ,N'RadioButton',N'checkbox',N'imageView',N'checkbox',N'checkbox')
+('AA06_arModule'             ,N'RadioButton',N'checkbox',N'imageView',N'checkbox',N'checkbox')
+('AA07_arSyntax'             ,N'字串設定語法',N'checkbox',N'imageView',N'checkbox',N'checkbox')
+
+
+arModule
+
+('EX01_CIB'                 ,N'CIB',N'SSIS',Null)
+('EX02_M3'                  ,N'MVDIS',N'Index',Null)
+('EX03_DGPA'                ,N'DGPA',N'replication ','mirroring')
+('EX04_KMUH'                ,N'KUMU',N'alwayson ',Null)
+('EX05_SYSCOM'              ,N'mingbackup',N'mingbackupfile ',mingbackupDB)
+('ex06_TPEx'                ,N'cluadmin',N'SQL2014 ',  )
+('ex07_MOFA'                ,N'cluadmin',N'SQL2014 ', )
+('ex08_TPEx_sharepoint2007'   ,N'cluadmin',N'SQL2014 ', )
+('ex08_01_TPEx_sharepoint2007' ,N'cluadmin',N'SQL2014 ',   )
+('ex09_CHTperformance'         ,N'CHT',N'sQL2008 ',   )
+('EX10_CHTD'                ,N'CHT',N'sQL2008 ',   )
+('EX11_HwaTaiBank'          ,N'CHT',N'sQL2008 ',   )
+('EX12_TsengFamily'         ,N'CHT',N'sQL2008 ',   )
+('EX13_KMUHDR'              ,N'CHT',N'sQL2008 ',   )
+('EX14_TWSELOGPerf'         ,N'TWSE',N'sQL2008 ', '\WorkLog\TWSE-RecAP'  )
+('EX15_TPDoITOneDrive'      ,N'TP',N' ', onedrive for business 'office 365 '  )
+('EX16_TPTAO'               ,N'臺北市交通事件裁決所',N' ', Taipei city Traffic Adjudication Office  )
+('EX17_TPTAO_everyQuarterly',N'臺北市交通事件裁決所',N' ', Taipei city Traffic Adjudication Office  )
+('EX18_ACERSharePoint'      ,N'SharePoint backup restore',N' ', Taipei city Traffic Adjudication Office  )
+
+('OS00_Index'                ,N'Index',N'Index',Null)
 ('OS01_General'               N'pipeline,function,workflow, snap-in ,snapin ',N'profile ,math ,string ,Time ,random ,variable ,array,gps,shortcut')
 
 ('OS02_performance'          ,N'Powershell start',N'powershell',Null)
@@ -71,7 +154,23 @@ W2K8R2-2013	        10.1.51.52	    NULL
 ('OS12_cloud'                ,N'Azure  install, connection, ',N'cloud ',Null)
 ('OS13_SC'                   ,N'SystemCenter ',N'cloud ',Null)
 ('OS14_Vendor'               ,N'VMWare ,Citrix ,Cisco ,Quest ',N'cloud ',Null)
-('OS15_cluster'              ,N'cluster , ',N' ',Null)('OS16_git'               ,N'IIS , Server manage, HyperV, Network,DNS',N'WmiObject',enable powershell_ise,)('SP00_cmdforSharePoint'     ,N'Powershell  for Sharepoint','powershell',NULL)('SP01_installconfg'         ,N'SharePoint installation  configure','powershell',NULL)('SP01_01_install'           ,N' service application ','powershell',NULL)('SP02_BI'                   ,N'BI execl  performance  visio','powershell',NULL)('SP02_01PMDstepbystep'      ,N'PMD2016','powershell','regedit')('SP03_Serviceapplication'   ,N' service application ','powershell',NULL)('SP04_FeatureSolution'       ,N' Site Templates  ','powershell',NULL)('SP05_OfficeWebApps'        ,N' excel client  ','VBA',Pivottable)('SP06_WebApplication'       ,N' Site Templates  ','powershell',NULL)('SP07_SP13BackupRestore'    ,N' Site Templates  ','powershell',NULL)('SQLPS00_enable'            ,N'Basic Task  , install uninstall ',N'other tools  cliconfg',N'SMO','ConfigurationFile')
+('OS15_cluster'              ,N'cluster , ',N' ',Null)
+('OS16_git'               ,N'IIS , Server manage, HyperV, Network,DNS',N'WmiObject',enable powershell_ise,)
+
+
+('SP00_cmdforSharePoint'     ,N'Powershell  for Sharepoint','powershell',NULL)
+('SP01_installconfg'         ,N'SharePoint installation  configure','powershell',NULL)
+('SP01_01_install'           ,N' service application ','powershell',NULL)
+('SP02_BI'                   ,N'BI execl  performance  visio','powershell',NULL)
+('SP02_01PMDstepbystep'      ,N'PMD2016','powershell','regedit')
+('SP03_Serviceapplication'   ,N' service application ','powershell',NULL)
+('SP04_FeatureSolution'       ,N' Site Templates  ','powershell',NULL)
+('SP05_OfficeWebApps'        ,N' excel client  ','VBA',Pivottable)
+('SP06_WebApplication'       ,N' Site Templates  ','powershell',NULL)
+('SP07_SP13BackupRestore'    ,N' Site Templates  ','powershell',NULL)
+
+
+('SQLPS00_enable'            ,N'Basic Task  , install uninstall ',N'other tools  cliconfg',N'SMO','ConfigurationFile')
 ('SQLPS01_alwayson'          ,N'Powershell start','powershell',NULL)
 ('SQLPS02_Sqlconfiguration'  ,N'filegroup ,index fragmentation ,job' ,'operator','powershell','Partition')
 ('SQLPS03_Invoke'            ,N'Powershell start','powershell',NULL)
@@ -99,7 +198,18 @@ W2K8R2-2013	        10.1.51.52	    NULL
 ('SQLPS18_Profiler'          ,N'change tacking,trace,distribut Replay',N'change tacking,trace,',NULL)
 ('SQLPS19_Agent'             ,NULL,'powershell',NULL)
 ('SQLPS20_policy'            ,N'PBM','powershell',NULL)
-('SQLPS21_BI'                ,N'SSRS ,SSAS ,SSIS ',N'SSDT',NULL)('SQLPS22_DataCollection'    ,N'Management Data warehouse ,MDW',N'powershell',NULL)('SQLPS23_SQLcapacity'       ,N'capacity planning and configuration  ,MDW',N'powershell',NULL)('SQLPS24_inmemory'          ,N'in memory',N'powershell',NULL)$-----------------AA01_General.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA01_General.ps1powershell_ise C:\Users\User\OneDrive\download\PS1\AA01_General.ps1#   66    command . shortcut #   74    宣告 / Type#   84    math
+('SQLPS21_BI'                ,N'SSRS ,SSAS ,SSIS ',N'SSDT',NULL)
+('SQLPS22_DataCollection'    ,N'Management Data warehouse ,MDW',N'powershell',NULL)
+('SQLPS23_SQLcapacity'       ,N'capacity planning and configuration  ,MDW',N'powershell',NULL)
+('SQLPS24_inmemory'          ,N'in memory',N'powershell',NULL)
+
+
+$-----------------AA01_General.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA01_General.ps1
+powershell_ise C:\Users\User\OneDrive\download\PS1\AA01_General.ps1
+#   66    command . shortcut 
+#   74    宣告 / Type
+#   84    math
 #   97    String
 #   111   array 陣列
 #  106    flow control  switch  break;  if  for
@@ -107,7 +217,37 @@ W2K8R2-2013	        10.1.51.52	    NULL
 #   113   getSystemService
 #   137   顯示溫度符號  
 #   156   自專案資源載入字串  getResources().getString(R.string.charC));  shen05
-$-----------------AA02_code.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA02_code.ps1powershell_ise C:\Users\User\OneDrive\download\PS1\AA02_code.ps1$-----------------AA03_anUse.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA03_anUse.ps1powershell_ise C:\Users\User\OneDrive\download\PS1\AA03_anUse.ps1$-----------------AA04_anComponent.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA04_anComponent.ps1powershell_ise C:\Users\User\OneDrive\download\PS1\AA04_anComponent.ps1$-----------------AA05_arSensorControl.ps1powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA05_arSensorControl.ps1powershell_ise C:\Users\User\OneDrive\download\PS1\AA05_arSensorControl.ps1$-----------------AA06_arModule.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\arModule.ps1powershell_ise C:\Users\User\OneDrive\download\PS1\AA05_SensorControl.ps1$-----------------EX01_CIB.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX01_CIB.ps1{<##00  base info
+
+$-----------------AA02_code.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA02_code.ps1
+powershell_ise C:\Users\User\OneDrive\download\PS1\AA02_code.ps1
+
+$-----------------AA03_anUse.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA03_anUse.ps1
+powershell_ise C:\Users\User\OneDrive\download\PS1\AA03_anUse.ps1
+
+$-----------------AA04_anComponent.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA04_anComponent.ps1
+powershell_ise C:\Users\User\OneDrive\download\PS1\AA04_anComponent.ps1
+
+
+
+
+$-----------------AA05_arSensorControl.ps1
+powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\AA05_arSensorControl.ps1
+
+powershell_ise C:\Users\User\OneDrive\download\PS1\AA05_arSensorControl.ps1
+
+
+$-----------------AA06_arModule.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\arModule.ps1
+
+powershell_ise C:\Users\User\OneDrive\download\PS1\AA05_SensorControl.ps1
+
+$-----------------EX01_CIB.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX01_CIB.ps1
+{<#
+#00  base info
 #01  Add-WindowsFeature PowerShell-ISE
 #02  74 enable winrm & configuation
 #03  109  get systeminfo
@@ -124,16 +264,53 @@ W2K8R2-2013	        10.1.51.52	    NULL
 #14 360  　get SQL SSIS  packages 
 #15  　   get Host performance
 #16  　   get SQL create script
-#>}$-----------------EX05_SYSCOM.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX05_SYSCOM.ps1{<## 31    mingbackup # 171   mingbackupfile# 337   mingbackuDB 
-# 434   mingbackupfile  F2 to F3  #>}$-----------------ex07_MOFA.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\ex07_MOFA.ps1$-----------------ex08_TPEx_sharepoint2007.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\ex08_TPEx_sharepoint2007.ps1# 31    mingbackup # 171   mingbackupfile# 337   mingbackuDB 
-$-----------------EX11_HwaTaiBank.ps1powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX11_HwaTaiBank.ps1$-----------------EX12_TsengFamily.ps1powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\EX12_TsengFamily.ps1{<#
+#>}
+$-----------------EX05_SYSCOM.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX05_SYSCOM.ps1
+{<#
+# 31    mingbackup 
+# 171   mingbackupfile
+# 337   mingbackuDB 
+# 434   mingbackupfile  F2 to F3  
+#>}
+$-----------------ex07_MOFA.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\ex07_MOFA.ps1
+
+
+
+$-----------------ex08_TPEx_sharepoint2007.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\ex08_TPEx_sharepoint2007.ps1
+# 31    mingbackup 
+# 171   mingbackupfile
+# 337   mingbackuDB 
+
+
+$-----------------EX11_HwaTaiBank.ps1
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX11_HwaTaiBank.ps1
+
+$-----------------EX12_TsengFamily.ps1
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\EX12_TsengFamily.ps1
+{<#
 # 11      tsql  Nov.30.3015
-# 20  74  check import File (ex:Family2010821X)  所有檔案是否已存放在 FamilyPhoto  之中了# 241     check 由 Table（FilePhotoListS  Familyphoto 是否可以讀取  file properties# 255     clear empty folder
+# 20  74  check import File (ex:Family2010821X)  所有檔案是否已存放在 FamilyPhoto  之中了
+# 241     check 由 Table（FilePhotoListS  Familyphoto 是否可以讀取  file properties
+# 255     clear empty folder
 # 284     delelte  Hidden   Thumbs.db
 # 296     ONOFF=2 之處理
-# 408    update ONOFF = 5 手動, filelength=0  ,then delete physical file# 572     rename  0 + FileName 
-# 587     人工排除 重覆 # 740     folder 內檔案數,大小  [FolderPhotoListS]
-# 825     compare two folder  &　F1 copy to F2# 945     New file import#>}$-----------------EX14_TWSELOGPerf.ps1powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\EX14_TWSELOGPerf.ps1$-----------------EX15_TPDoITOneDrive.ps1powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX15_TPDoITOneDrive.ps1{<##  50 gmail  get office365
+# 408    update ONOFF = 5 手動, filelength=0  ,then delete physical file
+# 572     rename  0 + FileName 
+# 587     人工排除 重覆 
+# 740     folder 內檔案數,大小  [FolderPhotoListS]
+# 825     compare two folder  &　F1 copy to F2
+# 945     New file import
+#>}
+$-----------------EX14_TWSELOGPerf.ps1
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\EX14_TWSELOGPerf.ps1
+
+$-----------------EX15_TPDoITOneDrive.ps1
+powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX15_TPDoITOneDrive.ps1
+{<#
+#  50 gmail  get office365
 #  67  office365 
 # 112  office365  onedrive  agent path
 # 162  office365  onenote
@@ -148,15 +325,61 @@ W2K8R2-2013	        10.1.51.52	    NULL
 #       Install and configure OneDrive for Business
 # 510   bandwidth performace
 # 706   make test file
-# 831 office 365 online management shell #>}$-----------------EX16_TPTAO.ps1powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX16_TPTAO.ps1$-----------------EX18_ACERSharePoint.ps1powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX18_ACERSharePoint.ps1$-----------------OS01_General
-powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1\OS01_General.ps1powershell_ise  C:\Users\User\OneDrive\download\PS1\OS01_General.ps1
+# 831 office 365 online management shell 
+#>}
+$-----------------EX16_TPTAO.ps1
+powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX16_TPTAO.ps1
+
+
+$-----------------EX18_ACERSharePoint.ps1
+powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\EX18_ACERSharePoint.ps1
+
+
+
+
+$-----------------OS01_General
+powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1\OS01_General.ps1
+powershell_ise  C:\Users\User\OneDrive\download\PS1\OS01_General.ps1
+
 { 
 # 1   88  Enable Powershell ISE  & telnet
-# 2   150  math# 3   300  String  replace  substring# 4   400  time# 5   500  File# 6   550  executionPolicy syntax V3# 7   600  Flow control# 8   700 variable & object  Hashtable# 9   750 Get-PSDrive#10   800 Install PowerShell V3 V4
-#11   750 PSSnapin  vs modules#12   800 mixed assembly error#13  850 Get-Command  filter Service2#14  900  Function #15  900  Out-GridView  Out-null #16  900  Measure-Command  Measure-Object
-#17  900  Group item find out count*#18  950  select-object ExpandProperty#(19)  950  system  variables  env:   PSVersionTable Automatic Variables#20  pass  parameter to ps1 file #21  Operators  運算子#(22) 1600   $env  set $env:path add Path 
+# 2   150  math
+# 3   300  String  replace  substring
+# 4   400  time
+# 5   500  File
+# 6   550  executionPolicy syntax V3
+# 7   600  Flow control
+# 8   700 variable & object  Hashtable
+# 9   750 Get-PSDrive
+#10   800 Install PowerShell V3 V4
+#11   750 PSSnapin  vs modules
+#12   800 mixed assembly error
+#13  850 Get-Command  filter Service2
+#14  900  Function 
+#15  900  Out-GridView  Out-null 
+#16  900  Measure-Command  Measure-Object
+#17  900  Group item find out count*
+#18  950  select-object ExpandProperty
+#(19)  950  system  variables  env:   PSVersionTable Automatic Variables
+#20  pass  parameter to ps1 file 
+#21  Operators  運算子
+#(22) 1600   $env  set $env:path add Path 
 #(1777) NoNewline or next line ,same line
-#  1777 expression  @{Name="Kbytes";Expression={$_.Length / 1Kb}} #  1916 Run a Dos command in Powershell  Aug.26.2015#  1966 try catch  Aug.30.2015#  2150 runas  administrator start-process execute program  & url IE  chrome#  2184 command . shortcut }$-----------------OS02_performance  {<#powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\OS02_performance.ps1\0S02_sets# 1         Enumerating the counter groups
+#  1777 expression  @{Name="Kbytes";Expression={$_.Length / 1Kb}} 
+#  1916 Run a Dos command in Powershell  Aug.26.2015
+#  1966 try catch  Aug.30.2015
+#  2150 runas  administrator start-process execute program  & url IE  chrome
+#  2184 command . shortcut 
+}
+
+
+
+$-----------------OS02_performance  
+{<#
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\OS02_performance.ps1
+
+\0S02_sets
+# 1         Enumerating the counter groups
 # 2         find right counter
 # 3         accessing the counter' data  Port : 445
 # 4   remote icm +  scriptblok + pararmeter  PowerShell DEEP DIVES ,port 445  p39
@@ -173,18 +396,44 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 # 14  550   disk I/0  sample
 # 15 600  disk I/0  sample
 # 16 700  performance set list
-# 17  750 $using parameter pass to remote  -AsJob # 18  800  relog  tool# 19  800 Data Collector Sets   
-# 20         Using Format Commands to Change Output View  # 21  1045   Import-Counter
-#     1072   Missing SQL Server Performance Counters#>}$-----------------OS02_03_Sharepoint_SQLpowershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\OS02_03_Sharepoint_SQL.ps1#  24   Get basic info
+# 17  750 $using parameter pass to remote  -AsJob 
+# 18  800  relog  tool
+# 19  800 Data Collector Sets   
+# 20         Using Format Commands to Change Output View  
+# 21  1045   Import-Counter
+#     1072   Missing SQL Server Performance Counters
+#>}
+
+$-----------------OS02_03_Sharepoint_SQL
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\OS02_03_Sharepoint_SQL.ps1
+
+#  24   Get basic info
 #  268  remote job counter
 #  351  os Memory  PCR
 #  435  SQL　　 PCR
-#  457  disk　　PCR#  584  ref $-----------------OS02_04_Alwaysonpowershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\OS02_04_Alwayson.ps1{<##  0 120  test data
+#  457  disk　　PCR
+#  584  ref 
+
+$-----------------OS02_04_Alwayson
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\OS02_04_Alwayson.ps1
+
+{<#
+#  0 120  test data
 #  1 150  SQLServer:Availability Replica  PCR
 #  2 200  SQLServer:Database Replica      PCR
 #  3 200  SQLServer:Database              PCR
 #  function  
-#  function PCRTwoNode #>}$-----------------OS05_Jobpowershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\OS05_Job.ps1{<## 01       background
+#  function PCRTwoNode 
+
+#>}
+
+
+
+$-----------------OS05_Job
+
+powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\OS05_Job.ps1
+{<#
+# 01       background
 # 02  120  Scheduled Tasks  
 # 03  250  New-ScheduledTaskAction
 # 04  300  ScheduledTaskTrigger 
@@ -198,7 +447,13 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 # 11  700  new  & clear & remove  & write-log
 # 12  760  Get-WinEvent
 # 13  800  wevtutil 
-#>}$-----------------OS06_remotepowershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\OS06_remote.ps1{<## 1  firewall   netsh advfirewall firewall
+#>}
+$-----------------OS06_remote
+powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\OS06_remote.ps1
+
+
+{<#
+# 1  firewall   netsh advfirewall firewall
 # 2 Enable-PSRemoting  Port 445, 5985
 # 3   115   Creating a remote Windows PowerShell session  pssession
 # 4  captures output from the remote Windows PowerShell session, as well as outputfrom the local session
@@ -210,7 +465,11 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 # 10 250  remote create scheuletasks 
 # 310   turn on Winrm using AD Group Policy Editor
 # 460  gwmi firewall port
-#>}$-----------------OS07_filepowershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\OS07_file.ps1powershell_ise  C:\Users\User\OneDrive\download\PS1\OS07_file.ps1
+#>}
+
+$-----------------OS07_file
+powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\OS07_file.ps1
+powershell_ise  C:\Users\User\OneDrive\download\PS1\OS07_file.ps1
 
 {<#
 #  50 out-file
@@ -243,7 +502,14 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 #   2539  get file path & file name
 #   2551  edit MP3 tags
 
-#>}$-----------------OS08_System powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS08_System.ps1 powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\OS08_System.ps1{<## 01        Get-WmiObject  Gwmi
+#>}
+
+
+$-----------------OS08_System
+ powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS08_System.ps1
+ powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\OS08_System.ps1
+{<#
+# 01        Get-WmiObject  Gwmi
 # 02        credential (Non-AD)  pass password
 # 03   60   Disk using gwmi
 # 03-1 150  10500 Checking disk space usage using gwmi  p133
@@ -259,21 +525,44 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 # 13  400   repeart
 # 14        get-wmiobject 
 # 15        Get computer system and hardware information
-# 16  450   Get-ItemProperty   GET regedit value  Use PowerShell to Easily Create New Registry Keys# 17 450    check node Port  open close# 18 500    Network  , adapter  NetIPConfiguration# 510   Enable Powershell ISE from Windows Server 2008 R2 + 2003 R2#  550  Change file extension associations
+# 16  450   Get-ItemProperty   GET regedit value  Use PowerShell to Easily Create New Registry Keys
+# 17 450    check node Port  open close
+# 18 500    Network  , adapter  NetIPConfiguration
+# 510   Enable Powershell ISE from Windows Server 2008 R2 + 2003 R2
+#  550  Change file extension associations
 #  596  Computer Startup shutdown , logon , logoff Scripts
 #  620  Execute Powershell and Prompt User to choice 
 #  650  Get  Share folder  Path of computer
-#  679    language  input  惱人的輸入法問題  & 候選字$-----------------OS0801_WebRequest download html#>}$-----------------OS09_modules{<#powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS09_modules.ps1# 01 50  $env:PSModulePath  :查詢預設模組位置
+#  679    language  input  惱人的輸入法問題  & 候選字
+
+$-----------------OS0801_WebRequest download html
+
+#>}
+$-----------------OS09_modules
+{<#
+
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS09_modules.ps1
+
+# 01 50  $env:PSModulePath  :查詢預設模組位置
 # 02 55 Get-module -listAvailable  查詢出來可用地 
 # 03 80  Get-module -查詢已匯入的模組  以及模組內的指令
 # 04 80 import-module-匯入的模組  &移除模組時
 # 05 100    尋找模組中的命令  
 # 06 110     Get  remove -psdrive   gh get-psdrive -full  Net use * /delete /y
-# 07 120     new -psdrive# 08  166     sqlpsx# 09   275  Remote Active Directory Administration  AD module RSAT-AD-PowerShell  RSAT-AD-AdminCenter
-#>}$-----------------OS10_ADpowershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS10_AD.ps1#  12  Install  RSAT-AD-PowerShell  Installing the Active Directory Module for PowerShell
+# 07 120     new -psdrive
+# 08  166     sqlpsx
+# 09   275  Remote Active Directory Administration  AD module RSAT-AD-PowerShell  RSAT-AD-AdminCenter
+
+#>}
+
+$-----------------OS10_AD
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS10_AD.ps1
+
+#  12  Install  RSAT-AD-PowerShell  Installing the Active Directory Module for PowerShell
 #  108  Use PowerShell to Deploy a New Active Directory Forest 
 #  290  Get-ADDomain
-#  310  Get-ADComputer#  344  Get-ADGroup
+#  310  Get-ADComputer
+#  344  Get-ADGroup
 #  428  NEW-ADOrganizationalUnit
 #  523   ADUser 
 #   669  Move-ADObject user to OU
@@ -282,7 +571,14 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 #  747  ADAccount  
 #  781  How to configure a firewall for domains and trusts.
 
-$-----------------OS15_cluster{<#powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS15_cluster.ps1#01      General command 
+
+
+
+$-----------------OS15_cluster
+{<#
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS15_cluster.ps1
+
+#01      General command 
 #02      Network check 
 #03      Get  IP Address
 #04  100 get/ Install WindowsFeature  &
@@ -306,10 +602,24 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 #22  600 function Start  SQL2012X   ClusSvc 
 #23  700 force a cluster to start without a quorum
 #24  750 GET path of File Share Witness
-#25  750 Cluster Quorum #>}$-----------------OS16_git{<#powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS16_git.ps1powershell_ise  C:\Users\User\OneDrive\download\PS1\OS16_git.ps1
-#01       
-#>}$-----------------SP00_cmdforSharePoint powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP00_cmdforSharePoint.ps1
-$-----------------SP01_installconfg
+#25  750 Cluster Quorum 
+#>}
+
+$-----------------OS16_git
+{<#
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\OS16_git.ps1
+powershell_ise  C:\Users\User\OneDrive\download\PS1\OS16_git.ps1
+
+#01       
+
+#>}
+
+$-----------------SP00_cmdforSharePoint
+ powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP00_cmdforSharePoint.ps1
+
+
+$-----------------SP01_installconfg
+
  powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP01_installconfg.ps1
 
 # 01   50  Check Sharepoint software appwiz.cpl
@@ -334,38 +644,86 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 #    1409   SPManagedAccount
 #    1413   SPServiceApplicationPool
 #  1471   IncludeCentralAdministration
-#  1478    update to  Sharepoint sp1#  1489   regedit  spfarm  login #  1650  after configuration Wizard  don't  run wizard now##  1671  SP Check List all
-$-----------------SP01_01_install{<#AutoSPInstaller#>}$-----------------SP02_BIPowershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP02_BI.ps1{<##  10    checklists#  15    create BI Group ,user, OU 
-#  101   create BI Group for SQL #  138  SQL install feature list#  153   Configure the Windows Firewall to Allow SQL Server Access
-#  340 Install and Download SharePoint 2013 prerequisites offline  Sp01_installconfg.ps1 Line:561#  465  Technical diagrams for SharePoint 2013   
+#  1478    update to  Sharepoint sp1
+#  1489   regedit  spfarm  login 
+#  1650  after configuration Wizard  don't  run wizard now
+##  1671  SP Check List all
+
+$-----------------SP01_01_install
+{<#
+AutoSPInstaller
+
+
+#>}
+$-----------------SP02_BI
+Powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP02_BI.ps1
+
+{<#
+#  10    checklists
+#  15    create BI Group ,user, OU 
+#  101   create BI Group for SQL 
+#  138  SQL install feature list
+#  153   Configure the Windows Firewall to Allow SQL Server Access
+#  340 Install and Download SharePoint 2013 prerequisites offline  Sp01_installconfg.ps1 Line:561
+#  465  Technical diagrams for SharePoint 2013   
 
 
 
-#>}$-----------------SP02_01PMDstepbystepPowershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP02_01PMDstepbystep.ps1Powershell_ise  \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SP02_01PMDstepbystep.ps1$-----------------SP03_ServiceapplicationPowershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP03_Serviceapplication.ps1{<#
+#>}
+$-----------------SP02_01PMDstepbystep
+Powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP02_01PMDstepbystep.ps1
+Powershell_ise  \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SP02_01PMDstepbystep.ps1
+
+
+
+$-----------------SP03_Serviceapplication
+Powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP03_Serviceapplication.ps1
+
+{<#
 #  17  Excel Services cmdlets
 # 100    service application  cmdlets
 # 128   Business Data Catalog Service Application 
 # 188  PerformancePoint Service Application
 # 244   Secure Store Service Application
 # 324   Visio Graphics Service Application
-#>}$-----------------SP04_FeatureSolutionPowershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP04_FeatureSolution.ps1{<##   13  Install-SPFeature
+#>}
+
+$-----------------SP04_FeatureSolution
+Powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP04_FeatureSolution.ps1
+
+{<#
+#   13  Install-SPFeature
 #   41  SPFeature
 #  142  Get-SPFeature -Limit ALL get 中文名稱
 #   1329  Enable-SPFeature
-#>}$-----------------SP06_WebApplicationpowershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP06_WebApplication.ps1
-    
+#>}
+
+$-----------------SP06_WebApplication
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP06_WebApplication.ps1
+
+    
 ##   51 伺服器陣列中所有的服務應用程式集區
 ##   64  Get-SPWebTemplate
 ##  188  SPWebApplication 
 ##  526 upload  +  download + delete  file to sharepoint 
-$-----------------SP07_BackupRestorepowershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP07_BackupRestore.ps1
 
-    
+$-----------------SP07_BackupRestore
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SP07_BackupRestore.ps1
+
+
+    
 ##   51 伺服器陣列中所有的服務應用程式集區
 ##   64  Get-SPWebTemplate
 ##  188  SPWebApplication 
-##  526 upload  +  download + delete  file to sharepoint \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\SP07_SP13BackupRestore.ps1
-$-----------------sqlps00_enablepowershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\sqlps00_enable.ps1{<## (1) 50 before start : check SQLPS
+##  526 upload  +  download + delete  file to sharepoint 
+
+\\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\SP07_SP13BackupRestore.ps1
+
+
+$-----------------sqlps00_enable
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\sqlps00_enable.ps1
+{<#
+# (1) 50 before start : check SQLPS
 # (2) 100  sQL Modules and snap-ins:
 # (3) 150  Import-Module “sqlps” -DisableNameChecking
 # (4) 150  naming parament rules  Development environment
@@ -381,9 +739,19 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 # (14)  600  Creating /Drop /Set a VIEW        with SMO  p81
 # (15)  650  Creating /Drop /Set a stored procedure with SMO  p85
 # (16)  700  Creating /Drop /Set a Trigger     with SMO  p90
-# (17)  750  Creating /Drop /Set INDEX         with SMO  p95# (18)  850  Executing a query / SQL script with SMO  p99# (19) 900 uninstall SQL feature SSRS#  889  cliconfg #  896  Install SQL Server PowerShell Module (SQLPS)
-#  912  using ConfigurationFile ini install SQL #  986   catch error invoke-sqlcmd 
-#>}$-----------------sqlps01_alwayson{<##  (01) 101  Get Alwayson  availability Groups is enables
+# (17)  750  Creating /Drop /Set INDEX         with SMO  p95
+# (18)  850  Executing a query / SQL script with SMO  p99
+# (19) 900 uninstall SQL feature SSRS
+#  889  cliconfg 
+#  896  Install SQL Server PowerShell Module (SQLPS)
+#  912  using ConfigurationFile ini install SQL 
+#  986   catch error invoke-sqlcmd 
+
+#>}
+
+$-----------------sqlps01_alwayson
+{<#
+#  (01) 101  Get Alwayson  availability Groups is enables
 #  (02) 117  Get instance information  using SQLPath
 #  (03) 255  Get AvailabilityGroups information
 #  (04) 300  configuration AlwaysOn with TSQL
@@ -452,7 +820,16 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 #  28 2500  monitor AG wiht SMO
 #  29  2555   Monitor availability groups and availability replicas status information using T-SQL
 
-#>}$-----------------sqlps02_Sqlconfigurationpowershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\sqlps02_Sqlconfiguration.ps1powershell_ise  C:\Users\User\OneDrive\download\PS1\sqlps02_Sqlconfiguration.ps1{<#\\172.16.220.29\c$\Users\administrator.CSD\SkyDrive\download\ps1\sqlps02_Sqlconfiguration.ps1\\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\sqlps02_Sqlconfiguration.ps1# 01      Listing installed hotfixes and service packs using SMO
+
+#>}
+
+$-----------------sqlps02_Sqlconfiguration
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\sqlps02_Sqlconfiguration.ps1
+powershell_ise  C:\Users\User\OneDrive\download\PS1\sqlps02_Sqlconfiguration.ps1
+{<#
+\\172.16.220.29\c$\Users\administrator.CSD\SkyDrive\download\ps1\sqlps02_Sqlconfiguration.ps1
+\\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\sqlps02_Sqlconfiguration.ps1
+# 01      Listing installed hotfixes and service packs using SMO
 # 02      Creating a filegroup
 # 03 130     Adding secondary data files to a filegroup  p.l156 
 #  (4) 200  Moving an index to a different filegroup  if OBJECT_ID
@@ -472,8 +849,12 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 # 18  Making a filegroup the default
 # 19  Adding a Filegroup Using ALTER DATABASE
 # 20  回傳 7 今天修改的
-# 21  Creating a SQL Server instance object  p29# 22  SQL Job view ,clear , start , stop  disable or enable JOB  by TSQL
-# 23  modify a job# 24  1015   List All Objects Created on All Filegroups in Databas# 25   1110  建立分割區資料表及索引  Partitioned Tables and Indexes# 1215 Get Database Table column Data Type  
+# 21  Creating a SQL Server instance object  p29
+# 22  SQL Job view ,clear , start , stop  disable or enable JOB  by TSQL
+# 23  modify a job
+# 24  1015   List All Objects Created on All Filegroups in Databas
+# 25   1110  建立分割區資料表及索引  Partitioned Tables and Indexes
+# 1215 Get Database Table column Data Type  
 #  1353    max degree of parallelism  MAXDOP
 #  1447    in-memory 
 #  1466    Set or Change the Database Collation
@@ -481,7 +862,18 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 
 # 1309  CSV to sql table (lost)
 #  1397  photo  CSV to sql table   + folderlocation (lost)
-#>}$----------------- SQLPS05_DMVpowershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS05_DMV.ps1{<##01     Clearing all plans from the plan cache or  清空資料快取暫存區並重新查詢後，觀察暫存區的使用狀況
+
+
+
+#>}
+
+
+$----------------- SQLPS05_DMV
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS05_DMV.ps1
+
+
+{<#
+#01     Clearing all plans from the plan cache or  清空資料快取暫存區並重新查詢後，觀察暫存區的使用狀況
 #02     Memory used per database
 #03  90 The queries that use the most CPU
 #04     Finding where a query is used
@@ -526,7 +918,17 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 
 
 #98   SQL Server Performance     Data Collection
-#99   SQL Server Host Performance Data Collection#>}$----------------- SQLPS05_03_listallpowershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS05_03_listall.ps1{<## 15   Listing 1.1 A simple monitor
+#99   SQL Server Host Performance Data Collection
+
+
+#>}
+
+
+
+$----------------- SQLPS05_03_listall
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS05_03_listall.ps1
+{<#
+# 15   Listing 1.1 A simple monitor
 # 32   Listing 1.2 Find your slowest queries
 # 55   Listing 1.3 Find those missing indexes  p.16
 # 76   Listing 1.4 Identify what SQL is running now p.17
@@ -641,11 +1043,32 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 # 4526  Listing 11.11 Average read/write times per file, per database p.311 
 # 4545 Listing 11.12 Simple trace utility  p.312
 # 4603 11.13 Some best practices p.314
-#>}$----------------- SQLPS05_04_listallpowershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS05_04_listall.ps1$-----------------SQLPS06_BCPpowershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS06_BCP.ps1{<##  (1)  50  bulk export using invoke-sqlcmd to CSV file
+
+
+#>}
+
+$----------------- SQLPS05_04_listall
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS05_04_listall.ps1
+
+
+
+$-----------------SQLPS06_BCP
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS06_BCP.ps1
+{<#
+#  (1)  50  bulk export using invoke-sqlcmd to CSV file
 #  (2)  100 bulk export using BCP  P102
 #  (3) 150  bulk import using BULK INSERT from CSV p.105
 
-#(99)my test Person.persony #>}$-----------------Sqlps07_Generalpowershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\Sqlps07_General.ps1{<#powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\Sqlps07_General.ps1
+#(99)my test Person.persony 
+#>}
+
+$-----------------Sqlps07_General
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\Sqlps07_General.ps1
+
+{<#
+powershell_ise \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\PS1\Sqlps07_General.ps1
+
+
 #  1  system 變數  TSQL id ,hostname
 #2         table => 變數 可執行  
 #3         WHILE  loop 
@@ -677,12 +1100,25 @@ powershell_ise  \\172.16.220.29\c$\Users\administrator.CSD\oneDrive\download\ps1
 #28    800 Attaching  / Detaching  /copy  a database using SMO  p143
 #29    900 Executing a SQL query to multiple servers p152
 #30    900 Running DBCC commands CLEANTABLE DBreindex   p167
-# 31   950 listing SQL Log error P215#32    delete SSMS Studio Tool 登入記錄 > 連接到 > 在伺服器名稱 > 點選> 直接 <DEL> 接鍵# 33  Show Size, Space Used, Unused Space, Type, and Name of all database files'# 1099 34   get table info   ref:tsql004.ps1  a  DB 上各Table ,Row  大小# 1300 35  compare two tables  tablediff# 1500 99  Built-in Functions TSQL
+# 31   950 listing SQL Log error P215
+#32    delete SSMS Studio Tool 登入記錄 > 連接到 > 在伺服器名稱 > 點選> 直接 <DEL> 接鍵
+# 33  Show Size, Space Used, Unused Space, Type, and Name of all database files'
+# 1099 34   get table info   ref:tsql004.ps1  a  DB 上各Table ,Row  大小
+# 1300 35  compare two tables  tablediff
+# 1500 99  Built-in Functions TSQL
 # 1500     Control-of-Flow Language TSQL
 #1801    Group having
 #1815  TSQL Trigger
-#1660  TQL Function#  1865   釋出所有快取  release cache on memory
-#  1971   Automated Script generation   ScriptTransfer#  1999   Getting database settings and object drops into a database-script part1 and part 2#>}$-----------------Sqlps08_Inventorypowershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\Sqlps08_Inventory.ps1{<## 01      Create  SQLInventory database
+#1660  TQL Function
+#  1865   釋出所有快取  release cache on memory
+#  1971   Automated Script generation   ScriptTransfer
+#  1999   Getting database settings and object drops into a database-script part1 and part 2
+#>}
+
+$-----------------Sqlps08_Inventory
+powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\Sqlps08_Inventory.ps1
+{<#
+# 01      Create  SQLInventory database
 # 02 100  <Hosts>
 # 03 150  insert/update Hosts
 # 04 200  SQLServers information  with sQLPath
@@ -742,13 +1178,18 @@ Powershell_ise   \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps
 # 14  5) Monitoring Replication with System Monitor http://technet.microsoft.com/en-us/library/ms151754.aspx
 # 15     agent job and MSreplication_monitordata
 # 16  MSdistribution_status
-# 17  http://basitaalishan.com/2012/07/25/transact-sql-script-to-monitor-replication-status/# 18  un- distribute command# 19  stop /start  distribution_agent# 20  stop / start  replicatoin Jobs 
+# 17  http://basitaalishan.com/2012/07/25/transact-sql-script-to-monitor-replication-status/
+# 18  un- distribute command
+# 19  stop /start  distribution_agent
+# 20  stop / start  replicatoin Jobs 
 #    1300  View and Modify Replication Security Settings
 #>}
 
 $-----------------Sqlps11_alert
 {<#
-# (1)  Get alert   --http://technet.microsoft.com/zh-tw/library/ms186933.aspx# (2)   Setting up Database Mail using SMO  P168# (3)  200 Adding / Running a SQL Server event alert  p187
+# (1)  Get alert   --http://technet.microsoft.com/zh-tw/library/ms186933.aspx
+# (2)   Setting up Database Mail using SMO  P168
+# (3)  200 Adding / Running a SQL Server event alert  p187
 
 #>}
 
@@ -784,12 +1225,14 @@ Powershell_ise   \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps
 #27  1168 範例程式碼15-12：檢視「資料庫稽核規格」物件的目前狀態
 #28  1180 範例程式碼15-13：建立登入帳戶ps3，可以連線資料庫Northwind_Audit，並賦予適當的權限
 #29  1208 範例程式碼15-14：查詢資料庫Northwind_Audit內的資料表
-#30  1233 範例程式碼15-15：建立函數，篩選與分析所需的稽核資料#31  1333  Testing  server Audit Specification
+#30  1233 範例程式碼15-15：建立函數，篩選與分析所需的稽核資料
+#31  1333  Testing  server Audit Specification
 #32  1400  Testing  Database Audit Specification
 #33  1470  檢視/create/drop   Audit   20150610
 #34  1500  Get audit actions   20150610
 #35  1800  sp_change_users_login  現有的資料庫使用者對應至 SQL Server 登入  20150720
-#36  1800  執行個體之間傳送登入和密碼 sp_help_revlogin   sp_hexadecimal  20150721#37  2001     稽核SQL Server Audit新增強的功能(1) 
+#36  1800  執行個體之間傳送登入和密碼 sp_help_revlogin   sp_hexadecimal  20150721
+#37  2001     稽核SQL Server Audit新增強的功能(1) 
 #38  2066     實作練習一
 #39  2575     實作練習二：認識對稽核記錄檔案的篩選
 #40  2778     實作練習三：認識使用者定義稽核群組
@@ -845,7 +1288,8 @@ $-----------------Sqlps17_Triggers
 #  300  RAISERROR 透過對 CREATE_TABLE 事件建立觸發程序，記錄建立者的帳號到 Windows Event Log
 #  350  DDL 觸發程序搭配資料表記錄使用者對資料庫的變更動作
 #  400   sys.messages 目錄檢檢視
-#  485   登入觸發程序  Logon Triggers#  513   creating a DDL trigger for the CREATE LOGIN facet which sends an email via sp_send_dbmail
+#  485   登入觸發程序  Logon Triggers
+#  513   creating a DDL trigger for the CREATE LOGIN facet which sends an email via sp_send_dbmail
 #  535  使用 EVENTDATA 函數
 #  607 DML  trigger  for DGPA 
 
@@ -873,7 +1317,9 @@ $-----------------Sqlps20_policy
 $-----------------SQLPS21_BI
 {<#
 powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS1\SQLPS21_BI.ps1
-#  27   Analysis Services PowerShell#  187  invoke-ascmd#  204  Backup  & restore ASDatabase
+#  27   Analysis Services PowerShell
+#  187  invoke-ascmd
+#  204  Backup  & restore ASDatabase
 #  230  SQL Server Analysis Services 教學課程
 #  309  Using powerPivot  in excel 2013
 #  333  Using power view
@@ -888,6 +1334,7 @@ powershell_ise \\192.168.112.124\c$\Users\administrator.CSD\OneDrive\download\PS
 
 
 
-$-----------------SQLPS24_inmemoryPowershell_ise   \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\SQLPS24_inmemory.ps1
+$-----------------SQLPS24_inmemory
+Powershell_ise   \\172.16.220.29\c$\Users\administrator.CSD\OneDrive\download\ps1\SQLPS24_inmemory.ps1
 
 #    2138   inmemory  table sample  how to know  is_memory_optimized
